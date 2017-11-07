@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.nb_rioputro.brawijaya_apps">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PatientActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NurseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChefActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".HomePatientActivity"
+            android:label="@string/title_activity_home_patient"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".FoodOrderActivity"
+            android:label="@string/title_activity_food_order"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".RicesMenu"
+            android:label="@string/title_activity_rices_menu"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".FoodDetailsActivity"
+            android:label="@string/title_activity_food_details"
+            android:theme="@style/AppTheme"></activity>
+    </application>
+
+</manifest>
