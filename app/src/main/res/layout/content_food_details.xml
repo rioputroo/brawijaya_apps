@@ -77,7 +77,7 @@
                 android:focusable="auto"
                 android:gravity="center_vertical"
                 android:paddingLeft="8dp"
-                android:text="ORDER"
+                android:text="ORDER THIS"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
