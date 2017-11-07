@@ -34,4 +34,5 @@ dependencies {
     compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
     compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     compile 'com.android.support:design:26.+'
+    compile 'com.cepheuen.elegant-number-button:lib:1.0.2'
 }
