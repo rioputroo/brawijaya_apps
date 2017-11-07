@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -21,9 +22,10 @@ import java.util.Locale;
 public class FoodDetailsActivity extends AppCompatActivity {
     ImageButton imbBack;
     String foodName, foodPrice, foodCategory, foodContent, foodDescription, foodStock, foodPict;
-    TextView tvFoodContentDetails, tvAddFood, tvFoodTitle, tvFoodNameDetails, tvFoodPriceDetails, tvFoodDescDetails;
+    TextView tvFoodContentDetails, tvAddFood, tvFoodTitle, tvFoodNameDetails, tvFoodPriceDetails, tvFoodDescDetails, tvOrder, tvCancel;
     ImageView ivFoodDetails;
     NumberFormat rupiahFormat;
+    ElegantNumberButton numberButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,14 @@ public class FoodDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_food_details);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
+
+        tvOrder = (TextView) findViewById(R.id.tvOrder);
+        tvCancel = (TextView) findViewById(R.id.tvCancel);
+        numberButton = (ElegantNumberButton) findViewById(R.id.number_button);
+        numberButton.setVisibility(View.GONE);
+        tvOrder.setVisibility(View.GONE);
+        tvCancel.setVisibility(View.GONE);
+
 
         imbBack = (ImageButton) findViewById(R.id.imbBack);
         imbBack.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +78,23 @@ public class FoodDetailsActivity extends AppCompatActivity {
         tvAddFood.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                finish();
+                tvAddFood.setVisibility(View.INVISIBLE);
+                numberButton.setVisibility(View.VISIBLE);
+                tvOrder.setVisibility(View.VISIBLE);
+                tvCancel.setVisibility(View.VISIBLE);
+
+                return false;
+            }
+        });
+
+        tvCancel.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                tvAddFood.setVisibility(View.VISIBLE);
+                numberButton.setVisibility(View.INVISIBLE);
+                tvOrder.setVisibility(View.INVISIBLE);
+                tvCancel.setVisibility(View.INVISIBLE);
+
                 return false;
             }
         });
@@ -77,7 +103,7 @@ public class FoodDetailsActivity extends AppCompatActivity {
         //tvFoodDescDetails.setText(foodDescription);
         tvFoodDescDetails.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.");
 
-        tvFoodContentDetails = (TextView)findViewById(R.id.tvFoodContentDetails);
+        tvFoodContentDetails = (TextView) findViewById(R.id.tvFoodContentDetails);
         tvFoodContentDetails.append(foodContent);
 
     }
