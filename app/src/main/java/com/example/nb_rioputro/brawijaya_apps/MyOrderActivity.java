@@ -68,8 +68,6 @@ public class MyOrderActivity extends AppCompatActivity {
         //setSupportActionBar(toolbar);
         tvRealTotal = (TextView) findViewById(R.id.tvRealTotal);
         cvTotal = (CardView) findViewById(R.id.cvTotal);
-        tvEmptyOrder = (TextView) findViewById(R.id.tvEmptyOrder);
-
 
         orderLayout = (CoordinatorLayout) findViewById(R.id.orderLayout);
         btnCheckout = (Button) findViewById(R.id.btnCheckout);
@@ -101,10 +99,6 @@ public class MyOrderActivity extends AppCompatActivity {
 
         getListOrder();
 
-        if (cartAdapter.getItemCount() == 0) {
-            cvTotal.setVisibility(View.GONE);
-            tvEmptyOrder.setVisibility(View.VISIBLE);
-        }
 
 
     }

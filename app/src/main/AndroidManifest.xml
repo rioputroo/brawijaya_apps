@@ -75,6 +75,10 @@
         <activity
             android:name=".ReviewActivity"
             android:label="@string/title_activity_review"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ContactActivity"
+            android:label="@string/title_activity_contact"
             android:theme="@style/AppTheme"></activity>
     </application>
 

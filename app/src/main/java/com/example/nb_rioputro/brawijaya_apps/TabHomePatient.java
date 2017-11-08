@@ -48,6 +48,12 @@ public class TabHomePatient extends Fragment {
         });
 
         btnCall = (Button) rootView.findViewById(R.id.btnCall);
+        btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                contactnurse();
+            }
+        });
 
         btnReview = (Button) rootView.findViewById(R.id.btnReview);
         btnReview.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +72,11 @@ public class TabHomePatient extends Fragment {
         });
 
         return rootView;
+    }
+
+    private void contactnurse() {
+        Intent contactIntent = new Intent(getActivity(),ContactActivity.class);
+        startActivity(contactIntent);
     }
 
     private void review() {
