@@ -48,6 +48,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         rupiahFormat = NumberFormat.getInstance(Locale.GERMANY);
         String rupiah = rupiahFormat.format(Double.parseDouble(food.getFoodPrice()));
 
+        final String foodId = food.getFoodId();
         final String foodName = food.getFoodName();
         final String foodPrice = food.getFoodPrice();
         final String foodCategory = food.getFoodCategory();
@@ -63,6 +64,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
             @Override
             public void onClick(View view) {
                 Intent detailsIntent = new Intent(view.getContext(), FoodDetailsActivity.class);
+                detailsIntent.putExtra("foodId", foodId);
                 detailsIntent.putExtra("foodName", foodName);
                 detailsIntent.putExtra("foodPrice", foodPrice);
                 detailsIntent.putExtra("foodCategory", foodCategory);

@@ -19,17 +19,21 @@ import com.bumptech.glide.Glide;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class FoodDetailsActivity extends AppCompatActivity {
     ImageButton imbBack;
-    String foodName, foodCategory, foodContent, foodDescription, foodStock, foodPict;
+    String foodName, foodCategory, foodContent, foodDescription, foodStock, foodPict, foodId;
     int foodPrice;
     TextView tvFoodContentDetails, tvAddFood, tvFoodTitle, tvFoodNameDetails, tvFoodPriceDetails, tvFoodDescDetails, tvCancel;
     ImageView ivFoodDetails;
     NumberFormat rupiahFormat;
     ElegantNumberButton numberButton;
     Button tvOrder;
+    String jumlah_order;
+    private List<Cart> cartList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +60,7 @@ public class FoodDetailsActivity extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
+        foodId = intent.getStringExtra("foodId");
         foodName = intent.getStringExtra("foodName");
         foodPrice = Integer.parseInt(intent.getStringExtra("foodPrice"));
         foodCategory = intent.getStringExtra("foodCategory");
@@ -107,11 +112,13 @@ public class FoodDetailsActivity extends AppCompatActivity {
         tvOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String jumlah = numberButton.getNumber();
-                int total = Integer.parseInt(jumlah) * foodPrice;
+                jumlah_order = numberButton.getNumber();
+                int total = Integer.parseInt(jumlah_order) * foodPrice;
+                String status = "cart";
 //                Toast.makeText(getApplicationContext(), String.valueOf(total), Toast.LENGTH_SHORT).show();
 
-
+                Cart cart = new Cart(foodId, foodName, foodPict, jumlah_order, total, status);
+                cartList.add(cart);
 
                 tvAddFood.setVisibility(View.VISIBLE);
                 numberButton.setVisibility(View.INVISIBLE);
