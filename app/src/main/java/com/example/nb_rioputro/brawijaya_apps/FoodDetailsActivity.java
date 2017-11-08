@@ -109,7 +109,14 @@ public class FoodDetailsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String jumlah = numberButton.getNumber();
                 int total = Integer.parseInt(jumlah) * foodPrice;
-                Toast.makeText(getApplicationContext(), String.valueOf(total), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), String.valueOf(total), Toast.LENGTH_SHORT).show();
+
+
+
+                tvAddFood.setVisibility(View.VISIBLE);
+                numberButton.setVisibility(View.INVISIBLE);
+                tvOrder.setVisibility(View.INVISIBLE);
+                tvCancel.setVisibility(View.INVISIBLE);
             }
         });
 
