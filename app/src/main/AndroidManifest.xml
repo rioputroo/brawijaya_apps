@@ -79,7 +79,8 @@
         <activity
             android:name=".ContactActivity"
             android:label="@string/title_activity_contact"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ChatActivity"></activity>
     </application>
 
 </manifest>
