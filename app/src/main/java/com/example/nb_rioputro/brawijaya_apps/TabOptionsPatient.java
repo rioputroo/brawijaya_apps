@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -18,6 +19,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -31,6 +33,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,6 +45,8 @@ public class TabOptionsPatient extends Fragment {
     private List<Cart> cartList = new ArrayList<>();
     RecyclerView recyclerCart;
     String mId;
+    CardView cardRowView;
+    TextView tvEmptyOrder;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -60,28 +65,30 @@ public class TabOptionsPatient extends Fragment {
         SharedPreferences sp = this.getActivity().getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
         mId = sp.getString(Config.ID_SHARED_PREF, "error getting id");
 
+        cardRowView = (CardView) rootView.findViewById(R.id.cardRowView);
+
         StringRequest onCartRequest = new StringRequest(Request.Method.POST, Config.GET_CART_LIST_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.d("ListCart: ", response);
 
-                try {
-                    JSONArray cartArr = new JSONArray(response);
+                    try {
+                        JSONArray cartArr = new JSONArray(response);
 
-                    for (int i = 0; i < cartArr.length(); i++) {
-                        JSONObject object = cartArr.getJSONObject(i);
-                        String foodName = object.getString("name_food");
-                        String jumlahOrder = object.getString("jumlah_order");
-                        String totalOrder = object.getString("total_order");
-                        String foodPict = object.getString("pict_food");
+                        for (int i = 0; i < cartArr.length(); i++) {
+                            JSONObject object = cartArr.getJSONObject(i);
+                            String foodName = object.getString("name_food");
+                            String jumlahOrder = object.getString("jumlah_order");
+                            String totalOrder = object.getString("total_order");
+                            String foodPict = object.getString("pict_food");
 
-                        Cart cart = new Cart(foodName, jumlahOrder, totalOrder, foodPict);
-                        cartList.add(cart);
+                            Cart cart = new Cart(foodName, jumlahOrder, totalOrder, foodPict);
+                            cartList.add(cart);
+                        }
+                        cartAdapter.notifyDataSetChanged();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
-                    cartAdapter.notifyDataSetChanged();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
             }
         }, new Response.ErrorListener() {
             @Override
