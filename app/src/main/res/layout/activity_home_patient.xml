@@ -60,7 +60,7 @@
                 android:id="@+id/tabItem3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:icon="@drawable/ic_options"
+                android:icon="@drawable/ic_cart"
                 android:text="@string/tab_text_3" />
 
         </android.support.design.widget.TabLayout>

@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,7 +22,8 @@ import java.util.Locale;
 
 public class FoodDetailsActivity extends AppCompatActivity {
     ImageButton imbBack;
-    String foodName, foodPrice, foodCategory, foodContent, foodDescription, foodStock, foodPict;
+    String foodName, foodCategory, foodContent, foodDescription, foodStock, foodPict;
+    int foodPrice;
     TextView tvFoodContentDetails, tvAddFood, tvFoodTitle, tvFoodNameDetails, tvFoodPriceDetails, tvFoodDescDetails, tvOrder, tvCancel;
     ImageView ivFoodDetails;
     NumberFormat rupiahFormat;
@@ -52,7 +54,7 @@ public class FoodDetailsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         foodName = intent.getStringExtra("foodName");
-        foodPrice = intent.getStringExtra("foodPrice");
+        foodPrice = Integer.parseInt(intent.getStringExtra("foodPrice"));
         foodCategory = intent.getStringExtra("foodCategory");
         foodContent = intent.getStringExtra("foodContent");
         foodDescription = intent.getStringExtra("foodDescription");
@@ -70,7 +72,7 @@ public class FoodDetailsActivity extends AppCompatActivity {
 
         tvFoodPriceDetails = (TextView) findViewById(R.id.tvFoodPriceDetails);
         rupiahFormat = NumberFormat.getInstance(Locale.GERMANY);
-        String rupiah = rupiahFormat.format(Double.parseDouble(foodPrice));
+        String rupiah = rupiahFormat.format(Double.parseDouble(String.valueOf(foodPrice)));
         tvFoodPriceDetails.append(rupiah);
 
         tvAddFood = (TextView) findViewById(R.id.tvAddFood);
@@ -94,6 +96,18 @@ public class FoodDetailsActivity extends AppCompatActivity {
                 numberButton.setVisibility(View.INVISIBLE);
                 tvOrder.setVisibility(View.INVISIBLE);
                 tvCancel.setVisibility(View.INVISIBLE);
+
+                return false;
+            }
+        });
+
+        tvOrder.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                String jumlah = numberButton.getNumber();
+                int total = Integer.parseInt(jumlah) * foodPrice;
+//                Toast.makeText(getApplicationContext(), total, Toast.LENGTH_SHORT).show();
+                Log.d("Total: ", String.valueOf(total));
 
                 return false;
             }

@@ -9,7 +9,7 @@
     <string name="title_activity_home_patient">HomePatientActivity</string>
     <string name="tab_text_1">Home</string>
     <string name="tab_text_2">Profile</string>
-    <string name="tab_text_3">Options</string>
+    <string name="tab_text_3">Order</string>
     <string name="title_activity_food_order">FoodOrderActivity</string>
     <string name="title_activity_rices_menu">RicesMenu</string>
     <string name="title_activity_food_details">FoodDetailsActivity</string>
