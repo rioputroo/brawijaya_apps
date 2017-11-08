@@ -62,7 +62,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/quicksand_regular"
-                android:text="Rp. "
+                android:text="IDR "
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/food_image"
                 app:layout_constraintTop_toBottomOf="@+id/food_name" />

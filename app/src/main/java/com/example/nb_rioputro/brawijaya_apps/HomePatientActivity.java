@@ -1,6 +1,11 @@
 package com.example.nb_rioputro.brawijaya_apps;
 
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -16,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class HomePatientActivity extends AppCompatActivity {
 
@@ -81,7 +87,6 @@ public class HomePatientActivity extends AppCompatActivity {
     }
 
 
-
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
@@ -94,7 +99,7 @@ public class HomePatientActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            switch (position){
+            switch (position) {
                 case 0:
                     TabHomePatient tabHome = new TabHomePatient();
                     return tabHome;
@@ -115,4 +120,6 @@ public class HomePatientActivity extends AppCompatActivity {
             return 3;
         }
     }
+
+
 }

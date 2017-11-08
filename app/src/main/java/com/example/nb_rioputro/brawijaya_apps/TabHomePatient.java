@@ -22,7 +22,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class TabHomePatient extends Fragment {
-    Button btnFoodOrder, btnLogout, btnMyOrder, btnCall;
+    Button btnFoodOrder, btnMyOrder, btnCall, btnLogout;
     String mId;
 
 
@@ -39,14 +39,6 @@ public class TabHomePatient extends Fragment {
             }
         });
 
-        btnLogout = (Button) rootView.findViewById(R.id.btnLogout);
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                userLogout();
-            }
-        });
-
         btnMyOrder = (Button) rootView.findViewById(R.id.btnMyOrder);
         btnMyOrder.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,20 +48,16 @@ public class TabHomePatient extends Fragment {
         });
 
         btnCall = (Button) rootView.findViewById(R.id.btnCall);
-        btnCall.setOnClickListener(new View.OnClickListener() {
+
+        btnLogout = (Button) rootView.findViewById(R.id.btnLogout);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                callNurse();
+                userLogout();
             }
         });
 
-
         return rootView;
-    }
-
-    private void callNurse() {
-        Intent nurseCallIntent = new Intent(getActivity(), NurseCallTestActivity.class);
-        startActivity(nurseCallIntent);
     }
 
     private void myOrder() {
@@ -93,6 +81,7 @@ public class TabHomePatient extends Fragment {
                 SharedPreferences.Editor editor = spLogout.edit();
 
                 editor.putBoolean(Config.LOGGEDIN_SHARED_PREF, false);
+                editor.putString(Config.ID_SHARED_PREF, "");
                 editor.putString(Config.USERNAME_SHARED_PREF, "");
                 editor.putString(Config.NAME_SHARED_PREF, "");
                 editor.putString(Config.ROLE_SHARED_PREF, "");
@@ -115,4 +104,6 @@ public class TabHomePatient extends Fragment {
         AlertDialog alertDialog = adLogout.create();
         alertDialog.show();
     }
+
+
 }

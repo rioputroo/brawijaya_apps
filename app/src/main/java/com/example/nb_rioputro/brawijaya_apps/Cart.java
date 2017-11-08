@@ -5,14 +5,49 @@ package com.example.nb_rioputro.brawijaya_apps;
  */
 
 public class Cart {
+    private int id;
     private int id_order;
     private int id_detail_order;
     private int id_food;
     private int jumlah_order;
     private int total_order;
+    private int price_food;
     private String status_order;
     private String name_food;
     private String pict_food;
+
+    public Cart(String foodName, int jumlahOrder, int totalOrder, String foodPict) {
+        this.name_food = foodName;
+        this.jumlah_order = jumlahOrder;
+        this.total_order = totalOrder;
+        this.pict_food = foodPict;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getPrice_food() {
+        return price_food;
+    }
+
+    public void setPrice_food(int price_food) {
+        this.price_food = price_food;
+    }
+
+    public Cart(String foodName, int jumlahOrder, int totalOrder, String foodPict, int id, int price_food) {
+        this.name_food = foodName;
+        this.jumlah_order = jumlahOrder;
+        this.total_order = totalOrder;
+        this.pict_food = foodPict;
+        this.id = id;
+        this.price_food = price_food;
+
+    }
 
     public String getName_food() {
         return name_food;
@@ -33,15 +68,15 @@ public class Cart {
     public Cart() {
     }
 
-    public Cart(String foodId, String jumlah_order, int total, String status) {
-        this.id_food = Integer.parseInt(foodId);
-        this.jumlah_order = Integer.parseInt(jumlah_order);
+    public Cart(int foodId, int jumlah_order, int total, String status) {
+        this.id_food = foodId;
+        this.jumlah_order = jumlah_order;
         this.total_order = total;
         this.status_order = status;
     }
 
-    public Cart(String foodId, String foodName, String jumlah_order, int total, String status) {
-        this.id_food = Integer.parseInt(foodId);
+    public Cart(int foodId, String foodName, String jumlah_order, int total, String status) {
+        this.id_food = foodId;
         this.jumlah_order = Integer.parseInt(jumlah_order);
         this.total_order = total;
         this.status_order = status;

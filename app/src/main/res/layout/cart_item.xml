@@ -9,11 +9,8 @@
         android:id="@+id/cardRowView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:padding="8dp"
-        app:cardCornerRadius="2dp"
+        app:cardCornerRadius="0dp"
         app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,8 +24,8 @@
 
             <ImageView
                 android:id="@+id/orderFoodImage"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
@@ -66,18 +63,52 @@
                 app:layout_constraintStart_toEndOf="@+id/orderFoodImage"
                 app:layout_constraintTop_toBottomOf="@+id/orderFoodName" />
 
+
             <TextView
                 android:id="@+id/orderFoodTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/quicksand_regular"
-                android:text="Rp. "
-                android:textSize="14sp"
+                android:text="IDR "
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/orderFoodQuantity" />
+                app:layout_constraintTop_toBottomOf="@+id/orderFoodName" />
+
+            <ImageButton
+                android:id="@+id/imbRemove"
+                android:layout_width="10dp"
+                android:layout_height="11dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@null"
+                app:layout_constraintBottom_toTopOf="@+id/orderFoodTotal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_remove" />
+
+            <!--<com.cepheuen.elegantnumberbutton.view.ElegantNumberButton-->
+            <!--android:id="@+id/number_order_quantity"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="21dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:layout_marginStart="8dp"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--app:backGroundColor="@color/colorAccent"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintStart_toEndOf="@+id/orderFoodImage"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/orderFoodName"-->
+            <!--app:layout_constraintVertical_bias="0.0"-->
+            <!--app:textSize="6sp">-->
+
+            <!--</com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>-->
 
         </android.support.constraint.ConstraintLayout>
 

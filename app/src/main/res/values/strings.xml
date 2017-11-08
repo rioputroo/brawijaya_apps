@@ -4,9 +4,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_home">HomeActivity</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Logout</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="title_activity_home_patient">HomePatientActivity</string>
+    <string name="title_activity_home_patient"></string>
     <string name="tab_text_1">Home</string>
     <string name="tab_text_2">Profile</string>
     <string name="tab_text_3">Order</string>
