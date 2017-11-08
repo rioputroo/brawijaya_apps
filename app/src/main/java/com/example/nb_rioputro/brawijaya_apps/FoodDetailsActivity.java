@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,10 +25,11 @@ public class FoodDetailsActivity extends AppCompatActivity {
     ImageButton imbBack;
     String foodName, foodCategory, foodContent, foodDescription, foodStock, foodPict;
     int foodPrice;
-    TextView tvFoodContentDetails, tvAddFood, tvFoodTitle, tvFoodNameDetails, tvFoodPriceDetails, tvFoodDescDetails, tvOrder, tvCancel;
+    TextView tvFoodContentDetails, tvAddFood, tvFoodTitle, tvFoodNameDetails, tvFoodPriceDetails, tvFoodDescDetails, tvCancel;
     ImageView ivFoodDetails;
     NumberFormat rupiahFormat;
     ElegantNumberButton numberButton;
+    Button tvOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +38,10 @@ public class FoodDetailsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
-        tvOrder = (TextView) findViewById(R.id.tvOrder);
+        tvOrder = (Button) findViewById(R.id.tvOrder);
         tvCancel = (TextView) findViewById(R.id.tvCancel);
         numberButton = (ElegantNumberButton) findViewById(R.id.number_button);
+
         numberButton.setVisibility(View.GONE);
         tvOrder.setVisibility(View.GONE);
         tvCancel.setVisibility(View.GONE);
@@ -101,15 +104,12 @@ public class FoodDetailsActivity extends AppCompatActivity {
             }
         });
 
-        tvOrder.setOnTouchListener(new View.OnTouchListener() {
+        tvOrder.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
+            public void onClick(View view) {
                 String jumlah = numberButton.getNumber();
                 int total = Integer.parseInt(jumlah) * foodPrice;
-//                Toast.makeText(getApplicationContext(), total, Toast.LENGTH_SHORT).show();
-                Log.d("Total: ", String.valueOf(total));
-
-                return false;
+                Toast.makeText(getApplicationContext(), String.valueOf(total), Toast.LENGTH_SHORT).show();
             }
         });
 

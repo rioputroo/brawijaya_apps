@@ -92,45 +92,44 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
                 app:backGroundColor="@color/colorAccent"
                 app:initialNumber="1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvFoodPriceDetails"
                 app:textSize="8sp">
 
             </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
-
-            <TextView
-                android:id="@+id/tvOrder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Order"
-                android:textColor="@android:color/holo_green_dark"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/number_button"
-                app:layout_constraintTop_toBottomOf="@+id/tvFoodPriceDetails" />
 
             <TextView
                 android:id="@+id/tvCancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Cancel"
                 android:textColor="@android:color/holo_red_dark"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tvOrder"
-                app:layout_constraintTop_toBottomOf="@+id/tvFoodPriceDetails" />
+                app:layout_constraintTop_toTopOf="@+id/number_button"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/tvOrder"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="95dp"
+                android:layout_height="38dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Order"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/number_button"
+                app:layout_constraintTop_toTopOf="@+id/number_button"
+                app:layout_constraintVertical_bias="0.49" />
 
 
         </android.support.constraint.ConstraintLayout>
