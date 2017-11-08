@@ -11,6 +11,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -55,6 +56,8 @@ public class MyOrderActivity extends AppCompatActivity {
     Button btnCheckout;
     int id;
     ProgressDialog progressDialog;
+    CardView cvTotal;
+    TextView tvEmptyOrder;
 
 
     @Override
@@ -64,6 +67,8 @@ public class MyOrderActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
         tvRealTotal = (TextView) findViewById(R.id.tvRealTotal);
+        cvTotal = (CardView) findViewById(R.id.cvTotal);
+        tvEmptyOrder = (TextView) findViewById(R.id.tvEmptyOrder);
 
 
         orderLayout = (CoordinatorLayout) findViewById(R.id.orderLayout);
@@ -96,6 +101,11 @@ public class MyOrderActivity extends AppCompatActivity {
 
         getListOrder();
 
+        if (cartAdapter.getItemCount() == 0) {
+            cvTotal.setVisibility(View.GONE);
+            tvEmptyOrder.setVisibility(View.VISIBLE);
+        }
+
 
     }
 
@@ -105,11 +115,15 @@ public class MyOrderActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Log.d("responseORder: ", response);
+                Snackbar snackbar = Snackbar.make(orderLayout, "Order successfully added!", Snackbar.LENGTH_LONG);
+                snackbar.show();
+                Intent successOrderIntent = new Intent(MyOrderActivity.this, HomePatientActivity.class);
+                startActivity(successOrderIntent);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override
