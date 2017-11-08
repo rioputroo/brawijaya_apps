@@ -20,5 +20,9 @@ public class Config {
 
     public static final String LOGIN_URL = IP + "brawijayaserv/user_controller/login/format/json";
     public static final String LISTRICEFOODS_URL = IP + "brawijayaserv/jobs_controller/get_all_rice_foods/format/json";
+    public static final String ADD_CART_URL = IP + "brawijayaserv/jobs_controller/add_cart/format/json";
+    public static final String GET_CART_LIST_URL = IP + "brawijayaserv/jobs_controller/get_cart_list/format/json";
+
+
     //public static final String LISTJOBS_URL = IP + "kurirsmiserver/jobs_controller/get_courier_jobs/format/json";
 }

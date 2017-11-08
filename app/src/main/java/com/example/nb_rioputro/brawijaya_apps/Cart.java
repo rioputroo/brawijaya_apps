@@ -14,6 +14,22 @@ public class Cart {
     private String name_food;
     private String pict_food;
 
+    public String getName_food() {
+        return name_food;
+    }
+
+    public void setName_food(String name_food) {
+        this.name_food = name_food;
+    }
+
+    public String getPict_food() {
+        return pict_food;
+    }
+
+    public void setPict_food(String pict_food) {
+        this.pict_food = pict_food;
+    }
+
     public Cart() {
     }
 
@@ -38,6 +54,13 @@ public class Cart {
         this.total_order = total;
         this.status_order = status;
         this.name_food = foodName;
+        this.pict_food = foodPict;
+    }
+
+    public Cart(String foodName, String jumlahOrder, String totalOrder, String foodPict) {
+        this.name_food = foodName;
+        this.jumlah_order = Integer.parseInt(jumlahOrder);
+        this.total_order = Integer.parseInt(totalOrder);
         this.pict_food = foodPict;
     }
 

@@ -1,6 +1,8 @@
 package com.example.nb_rioputro.brawijaya_apps;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,17 +17,28 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.RetryPolicy;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestManager;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 public class FoodDetailsActivity extends AppCompatActivity {
     ImageButton imbBack;
-    String foodName, foodCategory, foodContent, foodDescription, foodStock, foodPict, foodId;
+    String foodName, foodCategory, foodContent, foodDescription, foodStock, foodPict, foodId, mIdUser;
     int foodPrice;
     TextView tvFoodContentDetails, tvAddFood, tvFoodTitle, tvFoodNameDetails, tvFoodPriceDetails, tvFoodDescDetails, tvCancel;
     ImageView ivFoodDetails;
@@ -113,12 +126,57 @@ public class FoodDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 jumlah_order = numberButton.getNumber();
-                int total = Integer.parseInt(jumlah_order) * foodPrice;
-                String status = "cart";
-//                Toast.makeText(getApplicationContext(), String.valueOf(total), Toast.LENGTH_SHORT).show();
+                final int total = Integer.parseInt(jumlah_order) * foodPrice;
+                final String status = "cart";
 
-                Cart cart = new Cart(foodId, foodName, foodPict, jumlah_order, total, status);
-                cartList.add(cart);
+                SharedPreferences sp = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+                mIdUser = sp.getString(Config.ID_SHARED_PREF, "Error getting id");
+//                Toast.makeText(getApplicationContext(), String.valueOf(total), Toast.LENGTH_SHORT).show();
+                StringRequest cartRequest = new StringRequest(Request.Method.POST, Config.ADD_CART_URL, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("respCartReq: ", response);
+                        Toast.makeText(getApplicationContext(), "Order successfully added!", Toast.LENGTH_LONG).show();
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), "Order not added. Please try again.", Toast.LENGTH_LONG).show();
+                        Log.d("errRespCartReq: ", error.toString());
+                    }
+                }) {
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<>();
+                        params.put("id_detail_order", mIdUser);
+                        params.put("id_food", foodId);
+                        params.put("jumlah_order", jumlah_order);
+                        params.put("total_order", String.valueOf(total));
+                        params.put("status_order", status);
+
+                        return params;
+                    }
+                };
+
+                cartRequest.setRetryPolicy(new RetryPolicy() {
+                    @Override
+                    public int getCurrentTimeout() {
+                        return 50000;
+                    }
+
+                    @Override
+                    public int getCurrentRetryCount() {
+                        return 50000;
+                    }
+
+                    @Override
+                    public void retry(VolleyError error) throws VolleyError {
+
+                    }
+                });
+
+                RequestQueue rq = Volley.newRequestQueue(getApplicationContext());
+                rq.add(cartRequest);
 
                 tvAddFood.setVisibility(View.VISIBLE);
                 numberButton.setVisibility(View.INVISIBLE);
