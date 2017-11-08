@@ -22,7 +22,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class TabHomePatient extends Fragment {
-    Button btnFoodOrder, btnMyOrder, btnCall, btnLogout;
+    Button btnFoodOrder, btnMyOrder, btnCall, btnLogout, btnReview;
     String mId;
 
 
@@ -49,6 +49,14 @@ public class TabHomePatient extends Fragment {
 
         btnCall = (Button) rootView.findViewById(R.id.btnCall);
 
+        btnReview = (Button) rootView.findViewById(R.id.btnReview);
+        btnReview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                review();
+            }
+        });
+
         btnLogout = (Button) rootView.findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +66,11 @@ public class TabHomePatient extends Fragment {
         });
 
         return rootView;
+    }
+
+    private void review() {
+        Intent reviewIntent = new Intent(getActivity(), ReviewActivity.class);
+        startActivity(reviewIntent);
     }
 
     private void myOrder() {

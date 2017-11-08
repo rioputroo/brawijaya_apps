@@ -71,7 +71,11 @@
             android:name=".MyOrderActivity"
             android:label="@string/title_activity_my_order"
             android:theme="@style/AppTheme" />
-        <activity android:name=".NurseCallTestActivity"></activity>
+        <activity android:name=".NurseCallTestActivity" />
+        <activity
+            android:name=".ReviewActivity"
+            android:label="@string/title_activity_review"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

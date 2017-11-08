@@ -14,4 +14,5 @@
     <string name="title_activity_rices_menu">RicesMenu</string>
     <string name="title_activity_food_details">FoodDetailsActivity</string>
     <string name="title_activity_my_order">MyOrderActivity</string>
+    <string name="title_activity_review">ReviewActivity</string>
 </resources>
