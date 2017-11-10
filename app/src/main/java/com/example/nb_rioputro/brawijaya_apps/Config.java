@@ -14,8 +14,11 @@ public class Config {
     public static final String ID_SHARED_PREF = "id";
 
 
-    public static final String IP = "http://192.168.100.7/";
-    //public static final String IP = "http://192.168.0.115/";
+    //public static final String IP = "http://192.168.100.7/";
+    public static final String IP = "http://192.168.0.115/";
+
+    //public static final String IP = "http://192.168.43.59/";
+
 
 
     public static final String LOGIN_URL = IP + "brawijayaserv/user_controller/login/format/json";

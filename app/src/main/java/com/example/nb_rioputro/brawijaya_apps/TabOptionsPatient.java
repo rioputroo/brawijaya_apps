@@ -47,17 +47,30 @@ public class TabOptionsPatient extends Fragment {
     String mId;
     CardView cardRowView;
     TextView tvEmptyOrder;
+    Button btnOrderHistory;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.tab_options_patient, container, false);
 
+//        btnOrderHistory = (Button)rootView.findViewById(R.id.btnOrderHistory);
+//        btnOrderHistory.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                orderHistory();
+//            }
+//        });
 
 
 
         return rootView;
 
+    }
+
+    private void orderHistory() {
+        Intent orderHistory = new Intent(getActivity(), OrderHistoryActivity.class);
+        startActivity(orderHistory);
     }
 
 

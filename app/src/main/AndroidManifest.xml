@@ -80,7 +80,11 @@
             android:name=".ContactActivity"
             android:label="@string/title_activity_contact"
             android:theme="@style/AppTheme" />
-        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".ChatActivity" />
+        <activity
+            android:name=".OrderHistoryActivity"
+            android:label="@string/title_activity_order_history"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

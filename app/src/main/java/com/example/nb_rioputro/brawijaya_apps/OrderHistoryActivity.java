@@ -1,22 +1,24 @@
 package com.example.nb_rioputro.brawijaya_apps;
 
-import android.content.Intent;
-import android.net.Uri;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-public class ContactActivity extends AppCompatActivity {
+public class OrderHistoryActivity extends AppCompatActivity {
+    String mId;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact);
+        setContentView(R.layout.activity_order_history);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -28,21 +30,12 @@ public class ContactActivity extends AppCompatActivity {
             }
         });
 
-        Button btnChat = (Button) findViewById(R.id.buttonChat1);
-        btnChat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openChat();
-            }
-        });
+        SharedPreferences sp = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        mId = sp.getString(Config.ID_SHARED_PREF, "error getting id");
 
-        Button btnCall = (Button) findViewById(R.id.buttonCall1);
-        btnCall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openCall();
-            }
-        });
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_history);
+        recyclerView.setHasFixedSize(true);
+
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -52,17 +45,6 @@ public class ContactActivity extends AppCompatActivity {
 //                        .setAction("Action", null).show();
 //            }
 //        });
-    }
-
-    private void openCall() {
-        Intent callIntent = new Intent(Intent.ACTION_DIAL);
-        callIntent.setData(Uri.parse("tel:+6281294664293"));
-        startActivity(callIntent);
-    }
-
-    private void openChat() {
-        Intent chatIntent = new Intent(ContactActivity.this, ChatActivity.class);
-        startActivity(chatIntent);
     }
 
 }
