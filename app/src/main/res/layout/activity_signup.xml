@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context="com.example.nb_rioputro.brawijaya_apps.SignupActivity">
+    tools:context="com.example.nb_rioputro.brawijaya_apps.SignupActivity"
+    tools:layout_editor_absoluteY="25dp">
 
     <TextView
         android:id="@+id/textView"
@@ -19,7 +20,6 @@
         android:textColor="@color/colorPrimary"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView11" />
 
@@ -28,9 +28,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,13 +52,11 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
 
         <EditText
             android:id="@+id/password_signup"
@@ -71,6 +67,32 @@
             android:hint="Password"
             android:imeOptions="actionUnspecified"
             android:inputType="textPassword"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@android:color/black" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout3"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+        <EditText
+            android:id="@+id/nama_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:focusableInTouchMode="true"
+            android:hint="Nama"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textPersonName"
             android:maxLines="1"
             android:singleLine="true"
             android:textColor="@android:color/black" />
@@ -93,15 +115,16 @@
         android:id="@+id/btnDaftar"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginLeft="104dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/custom_button"
         android:elevation="4dp"
         android:fontFamily="@font/quicksand_regular"
         android:text="Register"
         android:textColor="@color/colorPrimary"
         android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
 
@@ -111,11 +134,10 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/btnDaftar"
         app:layout_constraintStart_toEndOf="@+id/btnDaftar"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+        app:layout_constraintTop_toTopOf="@+id/btnDaftar" />
 </android.support.constraint.ConstraintLayout>

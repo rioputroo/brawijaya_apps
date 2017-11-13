@@ -62,40 +62,40 @@ public class HomePatientActivity extends AppCompatActivity {
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
 
-        authListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user == null) {
-                    // user auth state is changed - user is null
-                    // launch login activity
-                    startActivity(new Intent(HomePatientActivity.this, LoginActivity.class));
-                    finish();
-                }
-            }
-        };
+//        authListener = new FirebaseAuth.AuthStateListener() {
+//            @Override
+//            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+//                FirebaseUser user = firebaseAuth.getCurrentUser();
+//                if (user == null) {
+//                    // user auth state is changed - user is null
+//                    // launch login activity
+//                    startActivity(new Intent(HomePatientActivity.this, LoginActivity.class));
+//                    finish();
+//                }
+//            }
+//        };
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-
-        if (user != null) {
-            boolean emailVerified = user.isEmailVerified();
-            if (!emailVerified == true) {
-                user.sendEmailVerification()
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    Log.d("TAG-EmailVerif", "Email sent");
-                                }
-                            }
-                        });
-            }
-
-            Log.d("status_email:", String.valueOf(emailVerified));
-//            String nama = user.getDisplayName();
-//            Log.d("nama_login: ", nama);
-        }
+//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//
+//
+//        if (user != null) {
+//            boolean emailVerified = user.isEmailVerified();
+//            if (!emailVerified == true) {
+//                user.sendEmailVerification()
+//                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                            @Override
+//                            public void onComplete(@NonNull Task<Void> task) {
+//                                if (task.isSuccessful()) {
+//                                    Log.d("TAG-EmailVerif", "Email sent");
+//                                }
+//                            }
+//                        });
+//            }
+//
+//            Log.d("status_email:", String.valueOf(emailVerified));
+////            String nama = user.getDisplayName();
+////            Log.d("nama_login: ", nama);
+//        }
 
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());

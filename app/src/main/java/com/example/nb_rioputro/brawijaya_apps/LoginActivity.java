@@ -53,13 +53,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        auth = FirebaseAuth.getInstance();
-
-        if (auth.getCurrentUser() != null) {
-            startActivity(new Intent(LoginActivity.this, HomePatientActivity.class));
-            finish();
-        }
-
         setContentView(R.layout.activity_login);
 
         etUsername = (EditText) findViewById(R.id.etUsername);
@@ -68,17 +61,16 @@ public class LoginActivity extends AppCompatActivity {
         mLoginLayout = (ScrollView) findViewById(R.id.scrollView);
         progressBar = (ProgressBar) findViewById(R.id.progressBar_signin);
 
-        auth = FirebaseAuth.getInstance();
 
-        btnSignUp = (Button) findViewById(R.id.btnSignUp);
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent signupIntent = new Intent(LoginActivity.this, SignupActivity.class);
-                startActivity(signupIntent);
-            }
-        });
-
+//        btnSignUp = (Button) findViewById(R.id.btnSignUp);
+//        btnSignUp.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent signupIntent = new Intent(LoginActivity.this, SignupActivity.class);
+//                startActivity(signupIntent);
+//            }
+//        });
+//
         //loadingIndicator.setVisibility(View.GONE);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -96,29 +88,31 @@ public class LoginActivity extends AppCompatActivity {
                     passError.show();
                 } else {
 //                    loadingIndicator.setVisibility(View.VISIBLE);
-//                    userLogin();
-                    progressBar.setVisibility(View.VISIBLE);
-
-                    //authenticate user
-                    auth.signInWithEmailAndPassword(mUsername, mPassword)
-                            .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    progressBar.setVisibility(View.GONE);
-                                    if (!task.isSuccessful()){
-                                        Toast.makeText(getApplicationContext(),"Authentication Failed",Toast.LENGTH_LONG).show();
-                                    } else {
-                                        startActivity(new Intent(LoginActivity.this,HomePatientActivity.class));
-                                        finish();
-                                    }
-                                }
-                            });
+                    userLogin();
+//                    login();
                 }
             }
         });
-
-
     }
+
+//    private void login() {
+//        progressBar.setVisibility(View.VISIBLE);
+//
+//        //authenticate user
+//        auth.signInWithEmailAndPassword(mUsername, mPassword)
+//                .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<AuthResult> task) {
+//                        progressBar.setVisibility(View.GONE);
+//                        if (!task.isSuccessful()){
+//                            Toast.makeText(getApplicationContext(),"Authentication Failed",Toast.LENGTH_LONG).show();
+//                        } else {
+//                            startActivity(new Intent(LoginActivity.this,HomePatientActivity.class));
+//                            finish();
+//                        }
+//                    }
+//                });
+//    }
 
     private void userLogin() {
         StringRequest loginRequest = new StringRequest(Request.Method.POST, Config.LOGIN_URL, new Response.Listener<String>() {
@@ -177,7 +171,7 @@ public class LoginActivity extends AppCompatActivity {
                 Snackbar volleyErr = Snackbar.make(mLoginLayout, error.toString(), Snackbar.LENGTH_LONG);
                 volleyErr.show();
                 Log.d("errLogin: ", error.toString());
-                loadingIndicator.setVisibility(View.GONE);
+                //loadingIndicator.setVisibility(View.GONE);
             }
         }) {
             @Override

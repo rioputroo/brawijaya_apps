@@ -20,7 +20,6 @@ public class Config {
     //public static final String IP = "http://192.168.43.59/";
 
 
-
     public static final String LOGIN_URL = IP + "brawijayaserv/user_controller/login/format/json";
     public static final String LISTRICEFOODS_URL = IP + "brawijayaserv/jobs_controller/get_all_rice_foods/format/json";
     public static final String ADD_CART_URL = IP + "brawijayaserv/jobs_controller/add_cart/format/json";
