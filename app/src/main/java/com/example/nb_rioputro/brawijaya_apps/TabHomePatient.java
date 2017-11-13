@@ -15,6 +15,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -27,17 +28,37 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
 public class TabHomePatient extends Fragment {
     Button btnFoodOrder, btnMyOrder, btnCall, btnLogout, btnReview;
     String mId;
     ImageView cardFood, cardPharmacy, cardToys, cardRoomServices, cardGuidanceBook, cardLogout;
+    FirebaseAuth auth;
+    FirebaseAuth.AuthStateListener authListener;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        auth = FirebaseAuth.getInstance();
+
+        authListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user == null) {
+                    // user auth state is changed - user is null
+                    // launch login activity
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                    getActivity().finish();
+                }
+            }
+        };
+
         View rootView = inflater.inflate(R.layout.tab_home_patient, container, false);
 
         cardFood = (ImageView) rootView.findViewById(R.id.imageView5);
@@ -111,6 +132,20 @@ public class TabHomePatient extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        auth.addAuthStateListener(authListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (authListener != null) {
+            auth.removeAuthStateListener(authListener);
+        }
+    }
+
     public static Bitmap decodeSampleBitmapFromResource(Resources res, int resId, int reqWidth, int reqHeight) {
 
         //First decode with inJustDecodeBounds=true to check dimensions
@@ -175,20 +210,35 @@ public class TabHomePatient extends Fragment {
         adLogout.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                SharedPreferences spLogout = getActivity().getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = spLogout.edit();
+//                SharedPreferences spLogout = getActivity().getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+//                SharedPreferences.Editor editor = spLogout.edit();
+//
+//                editor.putBoolean(Config.LOGGEDIN_SHARED_PREF, false);
+//                editor.putString(Config.ID_SHARED_PREF, "");
+//                editor.putString(Config.USERNAME_SHARED_PREF, "");
+//                editor.putString(Config.NAME_SHARED_PREF, "");
+//                editor.putString(Config.ROLE_SHARED_PREF, "");
+//
+//                editor.commit();
+//
+//                Intent logoutIntent = new Intent(getActivity(), LoginActivity.class);
+//                logoutIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                startActivity(logoutIntent);
+                auth.signOut();
 
-                editor.putBoolean(Config.LOGGEDIN_SHARED_PREF, false);
-                editor.putString(Config.ID_SHARED_PREF, "");
-                editor.putString(Config.USERNAME_SHARED_PREF, "");
-                editor.putString(Config.NAME_SHARED_PREF, "");
-                editor.putString(Config.ROLE_SHARED_PREF, "");
-
-                editor.commit();
-
-                Intent logoutIntent = new Intent(getActivity(), LoginActivity.class);
-                logoutIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(logoutIntent);
+// this listener will be called when there is change in firebase user session
+//                FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
+//                    @Override
+//                    public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+//                        FirebaseUser user = firebaseAuth.getCurrentUser();
+//                        if (user == null) {
+//                            // user auth state is changed - user is null
+//                            // launch login activity
+//                            startActivity(new Intent(getActivity(), LoginActivity.class));
+//                            getActivity().finish();
+//                        }
+//                    }
+//                };
             }
         });
 

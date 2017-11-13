@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "672059971109",
+    "firebase_url": "https://brawijaya-be227.firebaseio.com",
+    "project_id": "brawijaya-be227",
+    "storage_bucket": "brawijaya-be227.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672059971109:android:18b4ac37afc41977",
+        "android_client_info": {
+          "package_name": "com.example.nb_rioputro.brawijaya_apps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "672059971109-33e8nfn10lusva8h1djs6tfo60o1udl5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nb_rioputro.brawijaya_apps",
+            "certificate_hash": "4bb3b17a6a6850a25c3d610f947ab064ef58193a"
+          }
+        },
+        {
+          "client_id": "672059971109-1hjefojbfmmq2uc91ulv9gi6rtj69h0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa9GUrG_hsF0Ayd6DWwSERG2a65pVfkiI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672059971109-1hjefojbfmmq2uc91ulv9gi6rtj69h0h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -88,7 +88,8 @@
         <activity
             android:name=".OrderHistoryActivity"
             android:label="@string/title_activity_order_history"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".SignupActivity"></activity>
     </application>
 
 </manifest>

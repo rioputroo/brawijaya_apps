@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -14,16 +15,27 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class HomePatientActivity extends AppCompatActivity {
+    FirebaseAuth auth;
+    FirebaseAuth.AuthStateListener authListener;
+    ProgressBar progressBar;
+
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -49,6 +61,43 @@ public class HomePatientActivity extends AppCompatActivity {
         //setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
+
+        authListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user == null) {
+                    // user auth state is changed - user is null
+                    // launch login activity
+                    startActivity(new Intent(HomePatientActivity.this, LoginActivity.class));
+                    finish();
+                }
+            }
+        };
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+
+        if (user != null) {
+            boolean emailVerified = user.isEmailVerified();
+            if (!emailVerified == true) {
+                user.sendEmailVerification()
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Log.d("TAG-EmailVerif", "Email sent");
+                                }
+                            }
+                        });
+            }
+
+            Log.d("status_email:", String.valueOf(emailVerified));
+//            String nama = user.getDisplayName();
+//            Log.d("nama_login: ", nama);
+        }
+
+
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
@@ -61,6 +110,18 @@ public class HomePatientActivity extends AppCompatActivity {
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
 
+    }
+
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        auth.addAuthStateListener(authListener);
+//    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
 
