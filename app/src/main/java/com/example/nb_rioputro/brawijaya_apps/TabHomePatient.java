@@ -32,7 +32,7 @@ import com.squareup.picasso.Picasso;
 public class TabHomePatient extends Fragment {
     Button btnFoodOrder, btnMyOrder, btnCall, btnLogout, btnReview;
     String mId;
-    ImageView cardFood, cardPharmacy, cardToys, cardRoomServices, cardGuidanceBook;
+    ImageView cardFood, cardPharmacy, cardToys, cardRoomServices, cardGuidanceBook, cardLogout;
 
 
     @Override
@@ -45,12 +45,21 @@ public class TabHomePatient extends Fragment {
         cardToys = (ImageView) rootView.findViewById(R.id.imageView7);
         cardRoomServices = (ImageView) rootView.findViewById(R.id.imageView8);
         cardGuidanceBook = (ImageView) rootView.findViewById(R.id.imageView9);
+        cardLogout = (ImageView) rootView.findViewById(R.id.imageView10);
 
         cardFood.setImageBitmap(decodeSampleBitmapFromResource(getResources(), R.drawable.indonesian_2, 100, 100));
         cardPharmacy.setImageBitmap(decodeSampleBitmapFromResource(getResources(), R.drawable.home_pharmacy, 100, 100));
         cardToys.setImageBitmap(decodeSampleBitmapFromResource(getResources(), R.drawable.home_toys2, 100, 100));
         cardRoomServices.setImageBitmap(decodeSampleBitmapFromResource(getResources(), R.drawable.home_housekeeping, 100, 100));
         cardGuidanceBook.setImageBitmap(decodeSampleBitmapFromResource(getResources(), R.drawable.guidance_book, 100, 100));
+        cardLogout.setImageBitmap(decodeSampleBitmapFromResource(getResources(), R.drawable.logout_baru, 100, 100));
+
+        cardLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userLogout();
+            }
+        });
 
 
 //        Picasso.with(getActivity().getApplicationContext()).load(R.drawable.indonesian_2).into(cardFood);
