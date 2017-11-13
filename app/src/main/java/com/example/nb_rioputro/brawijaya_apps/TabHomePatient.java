@@ -10,6 +10,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -19,11 +23,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 public class TabHomePatient extends Fragment {
     Button btnFoodOrder, btnMyOrder, btnCall, btnLogout, btnReview;
     String mId;
+    ImageView cardFood, cardPharmacy, cardToys, cardRoomServices, cardGuidanceBook;
 
 
     @Override
@@ -31,51 +40,107 @@ public class TabHomePatient extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.tab_home_patient, container, false);
 
-        btnFoodOrder = (Button) rootView.findViewById(R.id.btnFoodOrder);
-        btnFoodOrder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                orderFood();
-            }
-        });
+        cardFood = (ImageView) rootView.findViewById(R.id.imageView5);
+        cardPharmacy = (ImageView) rootView.findViewById(R.id.imageView6);
+        cardToys = (ImageView) rootView.findViewById(R.id.imageView7);
+        cardRoomServices = (ImageView) rootView.findViewById(R.id.imageView8);
+        cardGuidanceBook = (ImageView) rootView.findViewById(R.id.imageView9);
 
-        btnMyOrder = (Button) rootView.findViewById(R.id.btnMyOrder);
-        btnMyOrder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                myOrder();
-            }
-        });
+        cardFood.setImageBitmap(decodeSampleBitmapFromResource(getResources(), R.drawable.indonesian_2, 100, 100));
+        cardPharmacy.setImageBitmap(decodeSampleBitmapFromResource(getResources(), R.drawable.home_pharmacy, 100, 100));
+        cardToys.setImageBitmap(decodeSampleBitmapFromResource(getResources(), R.drawable.home_toys2, 100, 100));
+        cardRoomServices.setImageBitmap(decodeSampleBitmapFromResource(getResources(), R.drawable.home_housekeeping, 100, 100));
+        cardGuidanceBook.setImageBitmap(decodeSampleBitmapFromResource(getResources(), R.drawable.guidance_book, 100, 100));
 
-        btnCall = (Button) rootView.findViewById(R.id.btnCall);
-        btnCall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                contactnurse();
-            }
-        });
 
-        btnReview = (Button) rootView.findViewById(R.id.btnReview);
-        btnReview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                review();
-            }
-        });
+//        Picasso.with(getActivity().getApplicationContext()).load(R.drawable.indonesian_2).into(cardFood);
+//        Picasso.with(getActivity().getApplicationContext()).load(R.drawable.home_pharmacy).into(cardPharmacy);
+//        Picasso.with(getActivity().getApplicationContext()).load(R.drawable.home_toys2).into(cardToys);
 
-        btnLogout = (Button) rootView.findViewById(R.id.btnLogout);
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                userLogout();
-            }
-        });
+
+//
+//        btnFoodOrder = (Button) rootView.findViewById(R.id.btnFoodOrder);
+//        btnFoodOrder.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                orderFood();
+//            }
+//        });
+//
+//        btnMyOrder = (Button) rootView.findViewById(R.id.btnMyOrder);
+//        btnMyOrder.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                myOrder();
+//            }
+//        });
+//
+//        btnCall = (Button) rootView.findViewById(R.id.btnCall);
+//        btnCall.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                contactnurse();
+//            }
+//        });
+//
+//        btnReview = (Button) rootView.findViewById(R.id.btnReview);
+//        btnReview.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                review();
+//            }
+//        });
+//
+//        btnLogout = (Button) rootView.findViewById(R.id.btnLogout);
+//        btnLogout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                userLogout();
+//            }
+//        });
 
         return rootView;
     }
 
+    public static Bitmap decodeSampleBitmapFromResource(Resources res, int resId, int reqWidth, int reqHeight) {
+
+        //First decode with inJustDecodeBounds=true to check dimensions
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(res, resId, options);
+
+        //Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+        //Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeResource(res, resId, options);
+    }
+
+    private static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
+
+        //Raw height and width of image
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+            final int halfHeight = height / 2;
+            final int halfWidth = width / 2;
+
+            //Calculate the largest inSampleSize value that is a power of 2 and keeps both
+            //height and width larger than the requested height and width.
+
+            while ((halfHeight / inSampleSize) >= reqHeight
+                    && (halfWidth / inSampleSize) >= reqWidth) {
+                inSampleSize *= 2;
+            }
+        }
+        return inSampleSize;
+    }
+
     private void contactnurse() {
-        Intent contactIntent = new Intent(getActivity(),ContactActivity.class);
+        Intent contactIntent = new Intent(getActivity(), ContactActivity.class);
         startActivity(contactIntent);
     }
 

@@ -21,6 +21,7 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText etUsername, etPassword;
     Button btnLogin;
     ScrollView mLoginLayout;
+    AVLoadingIndicatorView loadingIndicator;
 
     String mUsername, mPassword, username, name, role, id;
 
@@ -47,6 +49,9 @@ public class LoginActivity extends AppCompatActivity {
         etPassword = (EditText) findViewById(R.id.etPassword);
         btnLogin = (Button) findViewById(R.id.btnLogin);
         mLoginLayout = (ScrollView) findViewById(R.id.scrollView);
+        loadingIndicator = (AVLoadingIndicatorView) findViewById(R.id.loading_indicator);
+
+        loadingIndicator.setVisibility(View.GONE);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                     Snackbar passError = Snackbar.make(mLoginLayout, "Masukkan Password", Snackbar.LENGTH_LONG);
                     passError.show();
                 } else {
+                    loadingIndicator.setVisibility(View.VISIBLE);
                     userLogin();
                 }
             }
@@ -75,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Log.d("respLogin: ", response);
-                if (response.equalsIgnoreCase("")){
+                if (response.equalsIgnoreCase("")) {
                     Snackbar loginErr = Snackbar.make(mLoginLayout, "Login Failed, please check your username and password", Snackbar.LENGTH_LONG);
                     loginErr.show();
                 } else {
@@ -97,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         spEditor.commit();
 
-                        switch (role){
+                        switch (role) {
                             case "Patient":
                                 Intent patientIntent = new Intent(LoginActivity.this, HomePatientActivity.class);
                                 patientIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -124,9 +130,10 @@ public class LoginActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Snackbar volleyErr = Snackbar.make(mLoginLayout, error.toString(),Snackbar.LENGTH_LONG);
+                Snackbar volleyErr = Snackbar.make(mLoginLayout, error.toString(), Snackbar.LENGTH_LONG);
                 volleyErr.show();
                 Log.d("errLogin: ", error.toString());
+                loadingIndicator.setVisibility(View.GONE);
             }
         }) {
             @Override
