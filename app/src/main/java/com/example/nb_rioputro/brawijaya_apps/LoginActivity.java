@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
     AVLoadingIndicatorView loadingIndicator;
     ProgressBar progressBar;
     FirebaseAuth auth;
+    Context context;
 
     String mUsername, mPassword, username, name, role, id;
 
@@ -55,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
 
+
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
         btnLogin = (Button) findViewById(R.id.btnLogin);
@@ -62,15 +64,16 @@ public class LoginActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar_signin);
 
 
-//        btnSignUp = (Button) findViewById(R.id.btnSignUp);
-//        btnSignUp.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent signupIntent = new Intent(LoginActivity.this, SignupActivity.class);
-//                startActivity(signupIntent);
-//            }
-//        });
 //
+        btnSignUp = (Button) findViewById(R.id.btnSignUp);
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent signupIntent = new Intent(LoginActivity.this, SignupActivity.class);
+                startActivity(signupIntent);
+            }
+        });
+
         //loadingIndicator.setVisibility(View.GONE);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -88,11 +91,100 @@ public class LoginActivity extends AppCompatActivity {
                     passError.show();
                 } else {
 //                    loadingIndicator.setVisibility(View.VISIBLE);
-                    userLogin();
+//                    userLogin();
 //                    login();
+                    newLogin();
                 }
             }
         });
+    }
+
+    private void newLogin() {
+        progressBar.setVisibility(View.VISIBLE);
+
+        String loginUrl = "https://brawijaya-be227.firebaseio.com/users.json";
+
+        StringRequest loginReq = new StringRequest(Request.Method.GET, loginUrl, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if (response.equals("null")) {
+                    Toast.makeText(getApplicationContext(), "Login Failed. User not found.", Toast.LENGTH_LONG).show();
+                } else {
+                    try {
+                        JSONObject obj = new JSONObject(response);
+
+                        if (!obj.has(mUsername)) {
+                            Toast.makeText(getApplicationContext(), "Login Failed. User not found.", Toast.LENGTH_LONG).show();
+                        } else if (obj.getJSONObject(mUsername).getString("password").equals(mPassword)) {
+                            UserDetails.username = mUsername;
+                            UserDetails.password = mPassword;
+                            UserDetails.nama = obj.getJSONObject(mUsername).getString("nama");
+                            UserDetails.role = obj.getJSONObject(mUsername).getString("role");
+
+                            SharedPreferences spLogin = LoginActivity.this.getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+                            SharedPreferences.Editor spEditor = spLogin.edit();
+
+                            spEditor.putBoolean(Config.LOGGEDIN_SHARED_PREF, true);
+                            spEditor.putString(Config.USERNAME_SHARED_PREF, mUsername);
+                            spEditor.putString(Config.NAME_SHARED_PREF, UserDetails.nama);
+                            spEditor.putString(Config.ROLE_SHARED_PREF, UserDetails.role);
+                            //spEditor.putString(Config.ID_SHARED_PREF, id);
+
+                            spEditor.commit();
+
+                            switch (UserDetails.role) {
+                                case "Patient":
+                                    Intent patientIntent = new Intent(LoginActivity.this, HomePatientActivity.class);
+                                    patientIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(patientIntent);
+                                    break;
+//                            case "Nurse":
+//                                Intent nurseIntent = new Intent(LoginActivity.this, NurseActivity.class);
+//                                nurseIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                                startActivity(nurseIntent);
+//                                break;
+//                            case "Chef":
+//                                Intent chefIntent = new Intent(LoginActivity.this, ChefActivity.class);
+//                                chefIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                                startActivity(chefIntent);
+//                                break;
+                            }
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Incorrect Password.", Toast.LENGTH_LONG).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+                progressBar.setVisibility(View.GONE);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), "Error login: " + error.toString(), Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.GONE);
+            }
+        });
+
+        loginReq.setRetryPolicy(new RetryPolicy() {
+            @Override
+            public int getCurrentTimeout() {
+                return 50000;
+            }
+
+            @Override
+            public int getCurrentRetryCount() {
+                return 50000;
+            }
+
+            @Override
+            public void retry(VolleyError error) throws VolleyError {
+
+            }
+        });
+
+        RequestQueue rQueue = Volley.newRequestQueue(getApplicationContext());
+        rQueue.add(loginReq);
     }
 
 //    private void login() {

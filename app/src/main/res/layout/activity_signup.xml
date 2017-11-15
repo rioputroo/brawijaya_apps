@@ -35,12 +35,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <EditText
-            android:id="@+id/email_signup"
+            android:id="@+id/username_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorAccent"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
+            android:hint="Username"
+            android:inputType="textPersonName"
             android:maxLines="1"
             android:singleLine="true"
             android:textColor="@android:color/black" />

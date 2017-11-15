@@ -13,6 +13,7 @@
     <uses-permission-sdk-23 android:name="android.permission.ANSWER_PHONE_CALLS" />
     <uses-permission-sdk-23 android:name="android.permission.USE_SIP" />
     <uses-permission-sdk-23 android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -20,6 +21,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.USE_SIP" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -89,7 +91,36 @@
             android:name=".OrderHistoryActivity"
             android:label="@string/title_activity_order_history"
             android:theme="@style/AppTheme" />
-        <activity android:name=".SignupActivity"></activity>
+        <activity android:name=".SignupActivity" />
+        <activity
+            android:name=".ChatsActivity"
+            android:label="@string/title_activity_chats"
+            android:parentActivityName=".HomePatientActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.nb_rioputro.brawijaya_apps.HomePatientActivity" />
+        </activity>
+        <activity
+            android:name=".EggBreadActivity"
+            android:label="@string/title_activity_egg_bread"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".WesternActivity"
+            android:label="@string/title_activity_western"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".IndonesianActivity"
+            android:label="@string/title_activity_indonesian"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SnackActivity"
+            android:label="@string/title_activity_snack"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".DessertActivity"
+            android:label="@string/title_activity_dessert"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

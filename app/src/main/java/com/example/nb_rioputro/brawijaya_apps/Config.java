@@ -15,9 +15,9 @@ public class Config {
 
 
     //public static final String IP = "http://192.168.100.8/";
-    //public static final String IP = "http://192.168.0.115/";
+    public static final String IP = "http://192.168.0.115/";
 
-    public static final String IP = "http://192.168.43.59/";
+    //public static final String IP = "http://192.168.43.59/";
 
 
     public static final String LOGIN_URL = IP + "brawijayaserv/user_controller/login/format/json";
@@ -27,6 +27,8 @@ public class Config {
     public static final String UPDATE_ORDER_QTY = IP + "brawijayaserv/jobs_controller/update_order_qty/format/json";
     public static final String REMOVE_ORDER = IP + "brawijayaserv/jobs_controller/remove_order/format/json" ;
     public static final String CHECKOUT = IP + "brawijayaserv/jobs_controller/checkout/format/json" ;
+    public static final String GET_CONTACTS_URL = IP + "brawijayaserv/jobs_controller/get_contacts/format/json" ;
+
 
 
 

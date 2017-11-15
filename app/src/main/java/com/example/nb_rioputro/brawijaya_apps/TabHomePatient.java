@@ -82,6 +82,13 @@ public class TabHomePatient extends Fragment {
             }
         });
 
+        cardFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                orderFood();
+            }
+        });
+
 
 //        Picasso.with(getActivity().getApplicationContext()).load(R.drawable.indonesian_2).into(cardFood);
 //        Picasso.with(getActivity().getApplicationContext()).load(R.drawable.home_pharmacy).into(cardPharmacy);

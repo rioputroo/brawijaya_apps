@@ -35,6 +35,7 @@ public class HomePatientActivity extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseAuth.AuthStateListener authListener;
     ProgressBar progressBar;
+    Context context;
 
 
     /**

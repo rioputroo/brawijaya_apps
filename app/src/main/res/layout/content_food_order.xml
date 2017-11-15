@@ -8,25 +8,12 @@
     tools:context="com.example.nb_rioputro.brawijaya_apps.FoodOrderActivity"
     tools:showIn="@layout/activity_food_order">
 
-
-    <!--<android.support.v7.widget.SearchView-->
-        <!--android:id="@+id/searchFood"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginBottom="21dp"-->
-        <!--android:background="@drawable/custom_button2"-->
-        <!--app:defaultQueryHint="what do you want to eat"-->
-        <!--app:layout_constraintBottom_toTopOf="@+id/cvRices"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toTopOf="parent" />-->
-
     <android.support.v7.widget.CardView
-        android:id="@+id/cvRices"
-        android:layout_width="90dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:id="@+id/cvEggBread"
+        android:layout_width="150dp"
+        android:layout_height="130dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:clickable="true"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,41 +24,40 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_rice"
+                android:id="@+id/iv_eggbread"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/tv_eggbread"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="Rices"
+                android:text="Egg and Bread"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                app:layout_constraintTop_toBottomOf="@+id/iv_eggbread" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
-        android:id="@+id/cvNoodles"
-        android:layout_width="90dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
+        android:id="@+id/cvWestern"
+        android:layout_width="150dp"
+        android:layout_height="130dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:clickable="true"
-        app:layout_constraintStart_toEndOf="@+id/cvRices"
+        app:layout_constraintStart_toEndOf="@+id/cvEggBread"
         app:layout_constraintTop_toTopOf="parent">
 
         <android.support.constraint.ConstraintLayout
@@ -79,74 +65,150 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_noodles"
+                android:id="@+id/iv_western"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/tv_western"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="Noodles"
+                android:text="Western Choices"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                app:layout_constraintTop_toBottomOf="@+id/iv_western" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
-        android:id="@+id/cvBeverages"
-        android:layout_width="90dp"
-        android:layout_height="80dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:id="@+id/cvIndonesian"
+        android:layout_width="150dp"
+        android:layout_height="130dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:clickable="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.705"
-        app:layout_constraintStart_toEndOf="@+id/cvNoodles"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvEggBread">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_beverages"
+                android:id="@+id/iv_indonesian"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/tv_indonesian"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="Beverages"
+                android:text="Indonesian Delight"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+                app:layout_constraintTop_toBottomOf="@+id/iv_indonesian" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvSnack"
+        android:layout_width="150dp"
+        android:layout_height="130dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        app:layout_constraintStart_toEndOf="@+id/cvIndonesian"
+        app:layout_constraintTop_toBottomOf="@+id/cvWestern">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_snack"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_snack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Snack Time"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_snack" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvDessert"
+        android:layout_width="150dp"
+        android:layout_height="130dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvIndonesian">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_dessert"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_dessert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Dessert and Drink"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_dessert" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>

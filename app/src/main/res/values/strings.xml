@@ -23,4 +23,10 @@
     <string name="home_contact_order">Contact</string>
     <string name="home_housekeeping_order">Room Services</string>
     <string name="home_guidance_order">Guidance Book</string>
+    <string name="title_activity_chats">ChatsActivity</string>
+    <string name="title_activity_egg_bread">EggBreadActivity</string>
+    <string name="title_activity_western">WesternActivity</string>
+    <string name="title_activity_indonesian">IndonesianActivity</string>
+    <string name="title_activity_snack">SnackActivity</string>
+    <string name="title_activity_dessert">DessertActivity</string>
 </resources>
