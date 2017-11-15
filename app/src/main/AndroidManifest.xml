@@ -120,6 +120,14 @@
         <activity
             android:name=".DessertActivity"
             android:label="@string/title_activity_dessert"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SceondFoodOrderActivity"
+            android:label="@string/title_activity_sceond_food_order"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SecondFoodOrderActivity"
+            android:label="@string/title_activity_second_food_order"
             android:theme="@style/AppTheme"></activity>
     </application>
 

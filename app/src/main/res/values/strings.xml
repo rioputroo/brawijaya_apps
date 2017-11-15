@@ -29,4 +29,6 @@
     <string name="title_activity_indonesian">IndonesianActivity</string>
     <string name="title_activity_snack">SnackActivity</string>
     <string name="title_activity_dessert">DessertActivity</string>
+    <string name="title_activity_sceond_food_order">SceondFoodOrderActivity</string>
+    <string name="title_activity_second_food_order">SecondFoodOrderActivity</string>
 </resources>
