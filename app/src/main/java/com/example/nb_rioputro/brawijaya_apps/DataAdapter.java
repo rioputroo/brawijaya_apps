@@ -99,7 +99,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
             food_image = (ImageView) itemView.findViewById(R.id.food_image);
             food_name = (TextView) itemView.findViewById(R.id.food_name);
             food_price = (TextView) itemView.findViewById(R.id.food_price);
-            btnDetailsFood = (Button) itemView.findViewById(R.id.btnFoodDetails);
+            //btnDetailsFood = (Button) itemView.findViewById(R.id.btnFoodDetails);
 
         }
     }

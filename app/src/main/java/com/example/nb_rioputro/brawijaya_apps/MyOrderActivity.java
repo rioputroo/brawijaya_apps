@@ -89,15 +89,15 @@ public class MyOrderActivity extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
         mId = sp.getString(Config.ID_SHARED_PREF, "error getting id");
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_cart);
-        recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(layoutManager);
+//        recyclerView = (RecyclerView) findViewById(R.id.recycler_cart);
+//        recyclerView.setHasFixedSize(true);
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+//        recyclerView.setLayoutManager(layoutManager);
+//
+//        cartAdapter = new CartAdapter(cartList);
+//        recyclerView.setAdapter(cartAdapter);
 
-        cartAdapter = new CartAdapter(cartList);
-        recyclerView.setAdapter(cartAdapter);
-
-        getListOrder();
+        //getListOrder();
 
 
 

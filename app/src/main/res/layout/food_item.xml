@@ -10,11 +10,10 @@
         android:id="@+id/cardRowView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="1dp"
         android:padding="8dp"
+        android:layout_marginTop="1dp"
         app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,32 +22,32 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingBottom="16dp"
             app:layout_constraintBottom_toTopOf="@+id/food_price"
             app:layout_constraintTop_toTopOf="@+id/food_price">
 
             <ImageView
                 android:id="@+id/food_image"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginBottom="8dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:scaleType="centerCrop"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/food_name"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:fontFamily="@font/quicksand_regular"
+                android:lines="2"
+                android:maxLines="2"
+                android:minLines="2"
                 android:textColor="@android:color/black"
-                android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/food_image"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,31 +55,105 @@
                 android:id="@+id/food_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:fontFamily="@font/quicksand_regular"
                 android:text="IDR "
-                android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/food_image"
                 app:layout_constraintTop_toBottomOf="@+id/food_name" />
 
-            <Button
-                android:id="@+id/btnFoodDetails"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="96dp"
-                android:layout_height="40dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+            <TextView
+                android:id="@+id/tvPlaceOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:drawableRight="@drawable/ic_options"
-                android:drawableTint="@color/colorAccent"
-                android:text="Details"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Order"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toEndOf="@+id/food_price"
+                app:layout_constraintTop_toBottomOf="@+id/food_name" />
+
+            <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                android:id="@+id/number_button_baru"
+                android:layout_width="69dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                app:backGroundColor="@color/colorAccent"
+                app:initialNumber="1"
+                app:layout_constraintStart_toEndOf="@+id/food_price"
+                app:layout_constraintTop_toBottomOf="@+id/food_name"
+                app:textSize="5sp">
+
+            </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+
+            <TextView
+                android:id="@+id/tvOrderFix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:text="Add"
+                android:textColor="@android:color/holo_green_light"
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@+id/number_button_baru"
+                app:layout_constraintTop_toBottomOf="@+id/food_name" />
+
+            <TextView
+                android:id="@+id/tvCancelOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Cancel"
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@+id/tvOrderFix"
+                app:layout_constraintTop_toBottomOf="@+id/food_name" />
+
+            <EditText
+                android:id="@+id/etNoteOrder"
+                android:layout_width="218dp"
+                android:layout_height="38dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Note"
+                android:inputType="textPersonName"
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@+id/food_image"
                 app:layout_constraintTop_toBottomOf="@+id/food_price" />
+
+            <!--<TextView-->
+            <!--android:id="@+id/tvDetails"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:layout_marginStart="8dp"-->
+            <!--android:text="Details"-->
+            <!--android:textColor="@android:color/darker_gray"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintStart_toEndOf="@+id/tvPlaceOrder" />-->
+
+            <!--<Button-->
+            <!--android:id="@+id/btnFoodDetails"-->
+            <!--style="@style/Widget.AppCompat.Button.Borderless"-->
+            <!--android:layout_width="96dp"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:layout_marginEnd="8dp"-->
+            <!--android:layout_marginRight="8dp"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:text="Details"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/food_price" />-->
 
 
         </android.support.constraint.ConstraintLayout>

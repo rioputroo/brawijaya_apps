@@ -34,6 +34,7 @@ public class FoodOrderActivity extends AppCompatActivity {
     CoordinatorLayout foodLayout;
     ImageView iv_eggbread, iv_western, iv_indonesian, iv_snack, iv_dessert;
     ListView listFoodCategory;
+    ImageButton imbCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,14 @@ public class FoodOrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        imbCart = (ImageButton) findViewById(R.id.imbCart);
+        imbCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(FoodOrderActivity.this, MyOrderActivity.class));
             }
         });
 

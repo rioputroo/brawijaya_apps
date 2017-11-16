@@ -8,4 +8,16 @@
     tools:context="com.example.nb_rioputro.brawijaya_apps.SnackActivity"
     tools:showIn="@layout/activity_snack">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_snack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </android.support.v7.widget.RecyclerView>
+
 </android.support.constraint.ConstraintLayout>

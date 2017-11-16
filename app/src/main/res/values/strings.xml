@@ -31,4 +31,8 @@
     <string name="title_activity_dessert">DessertActivity</string>
     <string name="title_activity_sceond_food_order">SceondFoodOrderActivity</string>
     <string name="title_activity_second_food_order">SecondFoodOrderActivity</string>
+    <string name="title_activity_pharmacy_order">PharmacyOrderActivity</string>
+    <string name="title_activity_toys_order">ToysOrderActivity</string>
+    <string name="title_activity_housekeeping">HousekeepingActivity</string>
+    <string name="title_activity_guide_book">GuideBookActivity</string>
 </resources>

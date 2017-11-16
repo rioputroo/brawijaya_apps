@@ -68,16 +68,23 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
         rupiahFormat = NumberFormat.getInstance(Locale.GERMANY);
 
-        holder.tvOrderFoodName.setText(cart.getName_food());
-        holder.tvOrderFoodQuantity.append(jumlah);
+
         //holder.numberOrderQuantity.setNumber(jumlah);
         rupiahFormat = NumberFormat.getInstance(Locale.GERMANY);
         String rupiah = rupiahFormat.format(total);
-        holder.tvOrderFoodTotal.append(rupiah);
+
 
         final int pricefood = cart.getPrice_food();
 
-        Glide.with(holder.ivOrderFoodImage.getContext()).load(cart.getPict_food()).into(holder.ivOrderFoodImage);
+//        Glide.with(holder.ivOrderFoodImage.getContext()).load(cart.getPict_food()).into(holder.ivOrderFoodImage);
+//        holder.tvOrderFoodTotal.append(rupiah);
+//        holder.tvOrderFoodName.setText(cart.getName_food());
+//        holder.tvOrderFoodQuantity.append(jumlah);
+
+        Glide.with(holder.ivOrderFoodImage.getContext()).load(R.drawable.eggbread_2).into(holder.ivOrderFoodImage);
+        holder.tvOrderFoodTotal.append("99,000");
+        holder.tvOrderFoodName.setText("Club Sandwich");
+        holder.tvOrderFoodQuantity.append("2");
 
         holder.imbRemove.setOnClickListener(new View.OnClickListener() {
             @Override

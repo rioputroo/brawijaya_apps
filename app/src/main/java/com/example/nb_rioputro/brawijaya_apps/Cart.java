@@ -16,12 +16,30 @@ public class Cart {
     private String name_food;
     private String pict_food;
 
+    private String username;
+    private String foodid;
+    private String note;
+    private int quantity;
+    private int total;
+    private String status;
+
     public Cart(String foodName, int jumlahOrder, int totalOrder, String foodPict) {
         this.name_food = foodName;
         this.jumlah_order = jumlahOrder;
         this.total_order = totalOrder;
         this.pict_food = foodPict;
     }
+
+
+    public Cart(String username, String foodid, String note, int quantity, int total, String status) {
+        this.foodid = foodid;
+        this.username = username;
+        this.note = note;
+        this.quantity = quantity;
+        this.total = total;
+        this.status = status;
+    }
+
 
     public int getId() {
         return id;

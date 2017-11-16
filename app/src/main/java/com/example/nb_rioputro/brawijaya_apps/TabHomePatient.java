@@ -89,6 +89,34 @@ public class TabHomePatient extends Fragment {
             }
         });
 
+        cardPharmacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                orderPharmacy();
+            }
+        });
+
+        cardToys.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                orderToys();
+            }
+        });
+
+        cardRoomServices.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                housekeeping();
+            }
+        });
+
+        cardGuidanceBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                guidanceBook();
+            }
+        });
+
 
 //        Picasso.with(getActivity().getApplicationContext()).load(R.drawable.indonesian_2).into(cardFood);
 //        Picasso.with(getActivity().getApplicationContext()).load(R.drawable.home_pharmacy).into(cardPharmacy);
@@ -137,6 +165,26 @@ public class TabHomePatient extends Fragment {
 //        });
 
         return rootView;
+    }
+
+    private void guidanceBook() {
+        Intent orderIntent = new Intent(getActivity(), GuideBookActivity.class);
+        startActivity(orderIntent);
+    }
+
+    private void housekeeping() {
+        Intent orderIntent = new Intent(getActivity(), HousekeepingActivity.class);
+        startActivity(orderIntent);
+    }
+
+    private void orderToys() {
+        Intent orderIntent = new Intent(getActivity(), ToysOrderActivity.class);
+        startActivity(orderIntent);
+    }
+
+    private void orderPharmacy() {
+        Intent orderIntent = new Intent(getActivity(), PharmacyOrderActivity.class);
+        startActivity(orderIntent);
     }
 
 //    @Override
