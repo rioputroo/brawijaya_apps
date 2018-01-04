@@ -1,5 +1,7 @@
 package com.example.nb_rioputro.brawijaya_apps;
 
+import java.util.PriorityQueue;
+
 /**
  * Created by nb-rioputro on 11/8/2017.
  */
@@ -15,6 +17,83 @@ public class Cart {
     private String status_order;
     private String name_food;
     private String pict_food;
+    private Products currentProducts;
+
+    public Cart(String id, int jumlahOrder) {
+        this.id_barang = id;
+        this.jumlah_order = jumlahOrder;
+    }
+
+    public String getId_barang() {
+        return id_barang;
+    }
+
+    public void setId_barang(String id_barang) {
+        this.id_barang = id_barang;
+    }
+
+    private String id_barang;
+
+    public Cart(String note) {
+        this.note = note;
+    }
+
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getFoodid() {
+        return foodid;
+    }
+
+    public void setFoodid(String foodid) {
+        this.foodid = foodid;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public Products getCurrentProducts() {
+        return currentProducts;
+    }
+
+    public void setCurrentProducts(Products currentProducts) {
+        this.currentProducts = currentProducts;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     private String username;
     private String foodid;
@@ -57,13 +136,15 @@ public class Cart {
         this.price_food = price_food;
     }
 
-    public Cart(String foodName, int jumlahOrder, int totalOrder, String foodPict, int id, int price_food) {
+    public Cart(String foodName, int jumlahOrder, int totalOrder, String foodPict, String id, int price_food, String note, Products currentProducts) {
         this.name_food = foodName;
         this.jumlah_order = jumlahOrder;
         this.total_order = totalOrder;
         this.pict_food = foodPict;
-        this.id = id;
+        this.id_barang = id;
         this.price_food = price_food;
+        this.note = note;
+        this.currentProducts = currentProducts;
 
     }
 

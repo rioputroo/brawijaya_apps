@@ -1,0 +1,532 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.nb_rioputro.brawijaya_apps.GuidanceBookActivity$PlaceholderFragment">
+
+    <TextView
+        android:id="@+id/textView61"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="PHONE DIRECTORY"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView129"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Through Brawijaya Women &amp; Children Hospital simply either one – touch dialing the phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView61" />
+
+    <TextView
+        android:id="@+id/textView130"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 0/ 500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView129" />
+
+    <TextView
+        android:id="@+id/textView131"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 111"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView130" />
+
+    <TextView
+        android:id="@+id/textView132"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 116/ 124"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView131" />
+
+    <TextView
+        android:id="@+id/textView133"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 119"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView132" />
+
+    <TextView
+        android:id="@+id/textView134"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 118"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView133" />
+
+    <TextView
+        android:id="@+id/textView135"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 122/ 125"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView134" />
+
+    <TextView
+        android:id="@+id/textView136"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 113 "
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView135" />
+
+    <TextView
+        android:id="@+id/textView137"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 136 "
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView136" />
+
+    <TextView
+        android:id="@+id/textView138"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 220"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView137" />
+
+    <TextView
+        android:id="@+id/textView139"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 117"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView138" />
+
+    <TextView
+        android:id="@+id/textView140"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 104"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView139" />
+
+
+    <!--sisi kanan-->
+    <TextView
+        android:id="@+id/textView141"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Operator"
+
+        app:layout_constraintStart_toEndOf="@+id/textView132"
+        app:layout_constraintTop_toBottomOf="@+id/textView129" />
+
+    <TextView
+        android:id="@+id/textView142"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Customer Service"
+        app:layout_constraintStart_toEndOf="@+id/textView132"
+        app:layout_constraintTop_toBottomOf="@+id/textView141" />
+
+    <TextView
+        android:id="@+id/textView143"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Admission"
+        app:layout_constraintStart_toEndOf="@+id/textView132"
+        app:layout_constraintTop_toBottomOf="@+id/textView142" />
+
+    <TextView
+        android:id="@+id/textView144"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+
+        android:fontFamily="@font/quicksand_regular"
+        android:text="In Patient Reservation"
+        app:layout_constraintStart_toEndOf="@+id/textView132"
+        app:layout_constraintTop_toBottomOf="@+id/textView143" />
+
+    <TextView
+        android:id="@+id/textView145"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Outpatient Reservation"
+        app:layout_constraintStart_toEndOf="@+id/textView132"
+        app:layout_constraintTop_toBottomOf="@+id/textView144" />
+
+    <TextView
+        android:id="@+id/textView146"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Cashier"
+        app:layout_constraintStart_toEndOf="@+id/textView132"
+        app:layout_constraintTop_toBottomOf="@+id/textView145" />
+
+    <TextView
+        android:id="@+id/textView147"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Admin Laboratory"
+        app:layout_constraintStart_toEndOf="@+id/textView132"
+        app:layout_constraintTop_toBottomOf="@+id/textView146" />
+
+    <TextView
+        android:id="@+id/textView148"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Nurse Station 1st Floor"
+        app:layout_constraintStart_toEndOf="@+id/textView132"
+        app:layout_constraintTop_toBottomOf="@+id/textView147" />
+
+    <TextView
+        android:id="@+id/textView149"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Nurse Station 2nd Floor"
+        app:layout_constraintStart_toEndOf="@+id/textView132"
+        app:layout_constraintTop_toBottomOf="@+id/textView148" />
+
+    <TextView
+        android:id="@+id/textView150"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Radiology"
+        app:layout_constraintStart_toEndOf="@+id/textView132"
+        app:layout_constraintTop_toBottomOf="@+id/textView149" />
+
+    <TextView
+        android:id="@+id/textView151"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Emergency Room"
+        app:layout_constraintStart_toEndOf="@+id/textView132"
+        app:layout_constraintTop_toBottomOf="@+id/textView150" />
+
+    <TextView
+        android:id="@+id/textView152"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 127"
+
+        app:layout_constraintStart_toEndOf="@+id/textView145"
+        app:layout_constraintTop_toBottomOf="@+id/textView129" />
+
+    <TextView
+        android:id="@+id/textView153"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Pharmacy"
+
+        app:layout_constraintStart_toEndOf="@+id/textView152"
+        app:layout_constraintTop_toBottomOf="@+id/textView129" />
+
+    <TextView
+        android:id="@+id/textView154"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Our Pharmacist will give you assistance regarding the medicine you will take along with the advice information. Contact our pharmacy for further assistance"
+        android:textStyle="italic"
+
+        app:layout_constraintStart_toEndOf="@+id/textView152"
+        app:layout_constraintTop_toBottomOf="@+id/textView153" />
+
+    <TextView
+        android:id="@+id/textView155"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 130"
+
+        app:layout_constraintStart_toEndOf="@+id/textView145"
+        app:layout_constraintTop_toBottomOf="@+id/textView154" />
+
+    <TextView
+        android:id="@+id/textView156"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Dental Clinic"
+
+        app:layout_constraintStart_toEndOf="@+id/textView155"
+        app:layout_constraintTop_toBottomOf="@+id/textView154" />
+
+    <TextView
+        android:id="@+id/textView157"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 136"
+
+        app:layout_constraintStart_toEndOf="@+id/textView145"
+        app:layout_constraintTop_toBottomOf="@+id/textView155" />
+
+    <TextView
+        android:id="@+id/textView158"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Polyclinics"
+
+        app:layout_constraintStart_toEndOf="@+id/textView157"
+        app:layout_constraintTop_toBottomOf="@+id/textView156" />
+
+    <TextView
+        android:id="@+id/textView159"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 206"
+
+        app:layout_constraintStart_toEndOf="@+id/textView145"
+        app:layout_constraintTop_toBottomOf="@+id/textView157" />
+
+    <TextView
+        android:id="@+id/textView160"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Medical Rehabilitation"
+
+        app:layout_constraintStart_toEndOf="@+id/textView159"
+        app:layout_constraintTop_toBottomOf="@+id/textView158" />
+
+    <TextView
+        android:id="@+id/textView161"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 321"
+
+        app:layout_constraintStart_toEndOf="@+id/textView145"
+        app:layout_constraintTop_toBottomOf="@+id/textView159" />
+
+    <TextView
+        android:id="@+id/textView162"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Billing"
+
+        app:layout_constraintStart_toEndOf="@+id/textView161"
+        app:layout_constraintTop_toBottomOf="@+id/textView160" />
+
+    <TextView
+        android:id="@+id/textView163"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 126"
+
+        app:layout_constraintStart_toEndOf="@+id/textView145"
+        app:layout_constraintTop_toBottomOf="@+id/textView161" />
+
+    <TextView
+        android:id="@+id/textView164"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Gift Shop"
+
+        app:layout_constraintStart_toEndOf="@+id/textView163"
+        app:layout_constraintTop_toBottomOf="@+id/textView162" />
+
+    <TextView
+        android:id="@+id/textView165"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Ext 608"
+
+        app:layout_constraintStart_toEndOf="@+id/textView145"
+        app:layout_constraintTop_toBottomOf="@+id/textView163" />
+
+    <TextView
+        android:id="@+id/textView166"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="Kitchen (Nutrition)"
+
+        app:layout_constraintStart_toEndOf="@+id/textView165"
+        app:layout_constraintTop_toBottomOf="@+id/textView164" />
+
+    <TextView
+        android:id="@+id/textView167"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+
+        android:text="Our Chef’s and Kitchen staffs can provide your daily meal custom to your medical needs. Together with our Food Nutritionist will give advice with your meals in order to up your recovery process"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/textView165"
+        app:layout_constraintTop_toBottomOf="@+id/textView166" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.example.nb_rioputro.brawijaya_apps;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -54,6 +55,11 @@ public class ChatsActivity extends AppCompatActivity {
         });
 
         tvUserTitle = (TextView) findViewById(R.id.tvUserTitle);
+
+        Intent intent = getIntent();
+        String recipient = intent.getStringExtra("recipient");
+        UserDetails.chatWith = recipient;
+
         tvUserTitle.setText(UserDetails.chatWith);
 
         //setSupportActionBar(toolbar);

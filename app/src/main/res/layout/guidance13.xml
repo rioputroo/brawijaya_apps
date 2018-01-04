@@ -1,0 +1,933 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.nb_rioputro.brawijaya_apps.GuidanceBookActivity$PlaceholderFragment">
+
+    <TextView
+        android:id="@+id/textView61"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="BRAWIJAYA HEALTHCARE GROUP"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvBrawijayaMomsClub"
+        android:layout_width="300dp"
+        android:layout_height="500dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView61">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView168"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="BRAWIJAYA HOSPITAL BOJONGSARI"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView169"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Jl. Raya Ciputat Parung, Bojongsari, Depok"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView168" />
+
+            <TextView
+                android:id="@+id/textView170"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="021 -29836122"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView169" />
+
+            <TextView
+                android:id="@+id/textView171"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Services &amp; Facilities"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView170" />
+
+            <TextView
+                android:id="@+id/textView172"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Services"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView171" />
+
+            <TextView
+                android:id="@+id/textView173"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Obstetric &amp; Gynecology"
+                app:layout_constraintStart_toStartOf="@+id/textView172"
+                app:layout_constraintTop_toBottomOf="@+id/textView172" />
+
+            <TextView
+                android:id="@+id/textView174"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Children Health’s"
+                app:layout_constraintStart_toStartOf="@+id/textView172"
+                app:layout_constraintTop_toBottomOf="@+id/textView173" />
+
+            <TextView
+                android:id="@+id/textView175"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Internal Medicine"
+                app:layout_constraintStart_toStartOf="@+id/textView172"
+                app:layout_constraintTop_toBottomOf="@+id/textView174" />
+
+            <TextView
+                android:id="@+id/textView176"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Dental"
+                app:layout_constraintStart_toStartOf="@+id/textView172"
+                app:layout_constraintTop_toBottomOf="@+id/textView175" />
+
+            <TextView
+                android:id="@+id/textView177"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Psychology"
+                app:layout_constraintStart_toStartOf="@+id/textView172"
+                app:layout_constraintTop_toBottomOf="@+id/textView176" />
+
+            <TextView
+                android:id="@+id/textView178"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Medical Check Up"
+                app:layout_constraintStart_toStartOf="@+id/textView172"
+                app:layout_constraintTop_toBottomOf="@+id/textView177" />
+
+            <TextView
+                android:id="@+id/textView179"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - General Practitioner"
+                app:layout_constraintStart_toStartOf="@+id/textView172"
+                app:layout_constraintTop_toBottomOf="@+id/textView178" />
+
+            <TextView
+                android:id="@+id/textView180"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Facilities"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView179" />
+
+            <TextView
+                android:id="@+id/textView181"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Pharmacy"
+                app:layout_constraintStart_toStartOf="@+id/textView180"
+                app:layout_constraintTop_toBottomOf="@+id/textView180" />
+
+            <TextView
+                android:id="@+id/textView182"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Laboratory"
+                app:layout_constraintStart_toStartOf="@+id/textView180"
+                app:layout_constraintTop_toBottomOf="@+id/textView181" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvBrawijayaMomsClub2"
+        android:layout_width="300dp"
+        android:layout_height="500dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/cvBrawijayaMomsClub"
+        app:layout_constraintTop_toBottomOf="@+id/textView61">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView183"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="BRAWIJAYA CLINIC KEMANG"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView184"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Jl. Kemang Utara Raya, No. 83"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView183" />
+
+
+            <TextView
+                android:id="@+id/textView185"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Jakarta Selatan 12730"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView184" />
+
+            <TextView
+                android:id="@+id/textView198"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Phone : (021) 22717656"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView185" />
+
+
+            <TextView
+                android:id="@+id/textView186"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Services &amp; Facilities"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView198" />
+
+            <TextView
+                android:id="@+id/textView187"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Services"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView186" />
+
+            <TextView
+                android:id="@+id/textView188"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Obstetric &amp; Gynecology"
+                app:layout_constraintStart_toStartOf="@+id/textView187"
+                app:layout_constraintTop_toBottomOf="@+id/textView187" />
+
+            <TextView
+                android:id="@+id/textView189"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Children Health’s"
+                app:layout_constraintStart_toStartOf="@+id/textView187"
+                app:layout_constraintTop_toBottomOf="@+id/textView188" />
+
+            <TextView
+                android:id="@+id/textView190"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Children  Growth &amp; Development"
+                app:layout_constraintStart_toStartOf="@+id/textView187"
+                app:layout_constraintTop_toBottomOf="@+id/textView189" />
+
+            <TextView
+                android:id="@+id/textView191"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Dental"
+                app:layout_constraintStart_toStartOf="@+id/textView187"
+                app:layout_constraintTop_toBottomOf="@+id/textView190" />
+
+            <TextView
+                android:id="@+id/textView192"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Physiotherapy"
+                app:layout_constraintStart_toStartOf="@+id/textView187"
+                app:layout_constraintTop_toBottomOf="@+id/textView191" />
+
+            <TextView
+                android:id="@+id/textView193"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Psychology"
+                app:layout_constraintStart_toStartOf="@+id/textView187"
+                app:layout_constraintTop_toBottomOf="@+id/textView192" />
+
+            <TextView
+                android:id="@+id/textView194"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Medical Check Up"
+                app:layout_constraintStart_toStartOf="@+id/textView187"
+                app:layout_constraintTop_toBottomOf="@+id/textView193" />
+
+            <TextView
+                android:id="@+id/textView199"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - General Practitioner"
+                app:layout_constraintStart_toStartOf="@+id/textView187"
+                app:layout_constraintTop_toBottomOf="@+id/textView194" />
+
+            <TextView
+                android:id="@+id/textView195"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Facilities"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView199" />
+
+            <TextView
+                android:id="@+id/textView196"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Pharmacy"
+                app:layout_constraintStart_toStartOf="@+id/textView195"
+                app:layout_constraintTop_toBottomOf="@+id/textView195" />
+
+            <TextView
+                android:id="@+id/textView197"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - USG 4D"
+                app:layout_constraintStart_toStartOf="@+id/textView195"
+                app:layout_constraintTop_toBottomOf="@+id/textView196" />
+
+            <TextView
+                android:id="@+id/textView200"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Laboratory"
+                app:layout_constraintStart_toStartOf="@+id/textView195"
+                app:layout_constraintTop_toBottomOf="@+id/textView197" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvBrawijayaMomsClub3"
+        android:layout_width="300dp"
+        android:layout_height="500dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/cvBrawijayaMomsClub2"
+        app:layout_constraintTop_toBottomOf="@+id/textView61">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView201"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="BRAWIJAYA CLINIC UOB"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView202"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="CHUBB Square Building, Thamrin Nine Podium (UOB Plaza)"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView201" />
+
+
+            <TextView
+                android:id="@+id/textView203"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Level B1, Jl. MH. Thamrin No. 10 Jakarta Pusat 10230"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView202" />
+
+            <TextView
+                android:id="@+id/textView204"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Phone : 021 - 29261880"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView203" />
+
+
+            <TextView
+                android:id="@+id/textView205"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Services &amp; Facilities"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView204" />
+
+            <TextView
+                android:id="@+id/textView206"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Services"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView205" />
+
+            <TextView
+                android:id="@+id/textView207"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Obstetric &amp; Gynecology"
+                app:layout_constraintStart_toStartOf="@+id/textView206"
+                app:layout_constraintTop_toBottomOf="@+id/textView206" />
+
+            <TextView
+                android:id="@+id/textView208"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Children Health’s"
+                app:layout_constraintStart_toStartOf="@+id/textView206"
+                app:layout_constraintTop_toBottomOf="@+id/textView207" />
+
+            <TextView
+                android:id="@+id/textView209"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Internal Medicine"
+                app:layout_constraintStart_toStartOf="@+id/textView206"
+                app:layout_constraintTop_toBottomOf="@+id/textView208" />
+
+            <TextView
+                android:id="@+id/textView210"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Dental"
+                app:layout_constraintStart_toStartOf="@+id/textView206"
+                app:layout_constraintTop_toBottomOf="@+id/textView209" />
+
+            <TextView
+                android:id="@+id/textView211"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Physiotherapy"
+                app:layout_constraintStart_toStartOf="@+id/textView206"
+                app:layout_constraintTop_toBottomOf="@+id/textView210" />
+
+            <TextView
+                android:id="@+id/textView212"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Psychology"
+                app:layout_constraintStart_toStartOf="@+id/textView206"
+                app:layout_constraintTop_toBottomOf="@+id/textView211" />
+
+            <TextView
+                android:id="@+id/textView213"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Medical Check Up"
+                app:layout_constraintStart_toStartOf="@+id/textView206"
+                app:layout_constraintTop_toBottomOf="@+id/textView212" />
+
+            <TextView
+                android:id="@+id/textView214"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - General Practitioner"
+                app:layout_constraintStart_toStartOf="@+id/textView206"
+                app:layout_constraintTop_toBottomOf="@+id/textView213" />
+
+            <TextView
+                android:id="@+id/textView215"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Facilities"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView214" />
+
+            <TextView
+                android:id="@+id/textView216"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Pharmacy"
+                app:layout_constraintStart_toStartOf="@+id/textView215"
+                app:layout_constraintTop_toBottomOf="@+id/textView215" />
+
+            <TextView
+                android:id="@+id/textView217"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Laboratory"
+                app:layout_constraintStart_toStartOf="@+id/textView215"
+                app:layout_constraintTop_toBottomOf="@+id/textView216" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvBrawijayaMomsClub4"
+        android:layout_width="300dp"
+        android:layout_height="500dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/cvBrawijayaMomsClub3"
+        app:layout_constraintTop_toBottomOf="@+id/textView61">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView218"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="BRAWIJAYA CLINIC BANDUNG"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView219"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Jl. KH Ahmad Dahlan (Banteng) "
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView218" />
+
+
+            <TextView
+                android:id="@+id/textView220"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="No. 40 Bandung"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView219" />
+
+            <TextView
+                android:id="@+id/textView221"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Phone: (022) 7308 104 "
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView220" />
+
+
+            <TextView
+                android:id="@+id/textView222"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="Services &amp; Facilities"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView221" />
+
+            <TextView
+                android:id="@+id/textView223"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Services"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView222" />
+
+            <TextView
+                android:id="@+id/textView224"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Obstetric &amp; Gynecology"
+                app:layout_constraintStart_toStartOf="@+id/textView223"
+                app:layout_constraintTop_toBottomOf="@+id/textView223" />
+
+            <TextView
+                android:id="@+id/textView225"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Pediatric"
+                app:layout_constraintStart_toStartOf="@+id/textView223"
+                app:layout_constraintTop_toBottomOf="@+id/textView224" />
+
+            <TextView
+                android:id="@+id/textView226"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Dental"
+                app:layout_constraintStart_toStartOf="@+id/textView223"
+                app:layout_constraintTop_toBottomOf="@+id/textView225" />
+
+            <TextView
+                android:id="@+id/textView227"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Internist"
+                app:layout_constraintStart_toStartOf="@+id/textView223"
+                app:layout_constraintTop_toBottomOf="@+id/textView226" />
+
+            <TextView
+                android:id="@+id/textView228"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Psychology"
+                app:layout_constraintStart_toStartOf="@+id/textView223"
+                app:layout_constraintTop_toBottomOf="@+id/textView227" />
+
+            <TextView
+                android:id="@+id/textView229"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Children Growth &amp; Development"
+                app:layout_constraintStart_toStartOf="@+id/textView223"
+                app:layout_constraintTop_toBottomOf="@+id/textView228" />
+
+            <TextView
+                android:id="@+id/textView230"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Medical Check Up"
+                app:layout_constraintStart_toStartOf="@+id/textView223"
+                app:layout_constraintTop_toBottomOf="@+id/textView229" />
+
+            <TextView
+                android:id="@+id/textView231"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Dermatology"
+                app:layout_constraintStart_toStartOf="@+id/textView223"
+                app:layout_constraintTop_toBottomOf="@+id/textView230" />
+
+            <TextView
+                android:id="@+id/textView232"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Facilities"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView231" />
+
+            <TextView
+                android:id="@+id/textView233"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Pharmacy"
+                app:layout_constraintStart_toStartOf="@+id/textView232"
+                app:layout_constraintTop_toBottomOf="@+id/textView232" />
+
+            <TextView
+                android:id="@+id/textView234"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - USG 4D"
+                app:layout_constraintStart_toStartOf="@+id/textView232"
+                app:layout_constraintTop_toBottomOf="@+id/textView233" />
+
+            <TextView
+                android:id="@+id/textView235"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text=" - Radiology"
+                app:layout_constraintStart_toStartOf="@+id/textView232"
+                app:layout_constraintTop_toBottomOf="@+id/textView234" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

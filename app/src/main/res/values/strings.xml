@@ -35,4 +35,12 @@
     <string name="title_activity_toys_order">ToysOrderActivity</string>
     <string name="title_activity_housekeeping">HousekeepingActivity</string>
     <string name="title_activity_guide_book">GuideBookActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_contacts">ContactsActivity</string>
+    <string name="title_activity_survey_form">SurveyFormActivity</string>
+    <string name="title_activity_second_survey_form">SecondSurveyFormActivity</string>
+    <string name="title_activity_third_survey_form">ThirdSurveyFormActivity</string>
+    <string name="title_activity_guidance_book">GuidanceBookActivity</string>
+    <string name="title_activity_history_order">HistoryOrderActivity</string>
+    <string name="title_activity_contacts_detail">ContactsDetailActivity</string>
 </resources>

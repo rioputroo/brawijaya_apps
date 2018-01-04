@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nb_rioputro.brawijaya_apps">
 
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
 
     <uses-permission-sdk-23 android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission-sdk-23 android:name="android.permission.CALL_PHONE" />
@@ -14,6 +17,7 @@
     <uses-permission-sdk-23 android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission-sdk-23 android:name="android.permission.READ_PHONE_NUMBERS" />
     <uses-permission-sdk-23 android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission-sdk-23 android:name="android.permission.CAMERA"/>
 
     <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -26,7 +30,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -39,7 +43,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,7 +52,7 @@
         </activity>
         <activity
             android:name=".PatientActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="landscape" />
         <activity
             android:name=".NurseActivity"
             android:screenOrientation="portrait" />
@@ -61,47 +65,58 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".HomePatientActivity"
             android:label="@string/title_activity_home_patient"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".FoodOrderActivity"
             android:label="@string/title_activity_food_order"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".RicesMenu"
             android:label="@string/title_activity_rices_menu"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".FoodDetailsActivity"
             android:label="@string/title_activity_food_details"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".MyOrderActivity"
             android:label="@string/title_activity_my_order"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity android:name=".NurseCallTestActivity" />
         <activity
             android:name=".ReviewActivity"
             android:label="@string/title_activity_review"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".ContactActivity"
             android:label="@string/title_activity_contact"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity android:name=".ChatActivity" />
         <activity
             android:name=".OrderHistoryActivity"
             android:label="@string/title_activity_order_history"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity android:name=".SignupActivity" />
         <activity
             android:name=".ChatsActivity"
             android:label="@string/title_activity_chats"
             android:parentActivityName=".HomePatientActivity"
-            android:theme="@style/AppTheme">
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.nb_rioputro.brawijaya_apps.HomePatientActivity" />
@@ -109,22 +124,27 @@
         <activity
             android:name=".EggBreadActivity"
             android:label="@string/title_activity_egg_bread"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".WesternActivity"
             android:label="@string/title_activity_western"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".IndonesianActivity"
             android:label="@string/title_activity_indonesian"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".SnackActivity"
             android:label="@string/title_activity_snack"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".DessertActivity"
             android:label="@string/title_activity_dessert"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".SceondFoodOrderActivity"
@@ -133,23 +153,73 @@
         <activity
             android:name=".SecondFoodOrderActivity"
             android:label="@string/title_activity_second_food_order"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".PharmacyOrderActivity"
             android:label="@string/title_activity_pharmacy_order"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".ToysOrderActivity"
             android:label="@string/title_activity_toys_order"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".HousekeepingActivity"
             android:label="@string/title_activity_housekeeping"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".GuideBookActivity"
-            android:label="@string/title_activity_guide_book"
-            android:theme="@style/AppTheme"></activity>
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ContactsActivity"
+            android:label="@string/title_activity_contacts"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".VideoCallActivity" />
+        <activity android:name=".VideoCallScreen" />
+        <activity android:name=".CallScreenActivity" />
+        <activity
+            android:name=".SurveyFormActivity"
+            android:label="@string/title_activity_survey_form"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".SecondSurveyFormActivity"
+            android:label="@string/title_activity_second_survey_form"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ThirdSurveyFormActivity"
+            android:label="@string/title_activity_third_survey_form"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".GuidanceBookActivity"
+            android:label="@string/title_activity_guidance_book"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".CallActivity" />
+        <activity
+            android:name=".HistoryOrderActivity"
+            android:label="@string/title_activity_history_order"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".IncomingCallScreenActivity" />
+
+        <service android:name=".SinchService" />
+
+        <activity
+            android:name=".ContactsDetailActivity"
+            android:label="@string/title_activity_contacts_detail"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".PlaceVideoCallActivity"></activity>
     </application>
 
 </manifest>

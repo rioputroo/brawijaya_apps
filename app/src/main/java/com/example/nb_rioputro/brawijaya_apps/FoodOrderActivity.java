@@ -47,17 +47,19 @@ public class FoodOrderActivity extends AppCompatActivity {
         imbBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
 
-        imbCart = (ImageButton) findViewById(R.id.imbCart);
-        imbCart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(FoodOrderActivity.this, MyOrderActivity.class));
-            }
-        });
+//        imbCart = (ImageButton) findViewById(R.id.imbCart);
+//        imbCart.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(FoodOrderActivity.this, MyOrderActivity.class));
+//            }
+//        });
 
         listFoodCategory = (ListView) findViewById(R.id.listItemFoodCategory);
 

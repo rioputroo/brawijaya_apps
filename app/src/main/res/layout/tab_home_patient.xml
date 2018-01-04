@@ -8,8 +8,10 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
+        android:layout_width="500dp"
         android:layout_height="match_parent"
+        android:layout_marginLeft="400dp"
+        android:layout_marginRight="300dp"
         tools:layout_editor_absoluteY="25dp">
 
 
@@ -157,7 +159,6 @@
             android:id="@+id/cardView11"
             android:layout_width="150dp"
             android:layout_height="130dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -199,8 +200,7 @@
         <android.support.v7.widget.CardView
             android:id="@+id/cardView12"
             android:layout_width="150dp"
-            android:layout_height="130dp"
-            android:layout_marginLeft="24dp"
+            android:layout_height="131dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             app:layout_constraintStart_toEndOf="@+id/cardView11"
@@ -243,7 +243,6 @@
             android:id="@+id/cardView13"
             android:layout_width="150dp"
             android:layout_height="130dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -286,7 +285,6 @@
             android:id="@+id/cardView14"
             android:layout_width="150dp"
             android:layout_height="130dp"
-            android:layout_marginLeft="24dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toEndOf="@+id/cardView13"
@@ -372,7 +370,6 @@
             android:id="@+id/cardView16"
             android:layout_width="150dp"
             android:layout_height="130dp"
-            android:layout_marginLeft="24dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toEndOf="@+id/cardView15"
